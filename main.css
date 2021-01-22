@@ -1,6 +1,6 @@
 @font-face
 {
- 	font-family: "Aldrich", sans-serif;
+ 	font-family: 'Dosis', sans-serif;
   	/* src: url('Font/FjordOne-Regular.ttf') format('truetype'); */
 }
 
@@ -9,7 +9,7 @@ body
 	height: 100%;
 	margin: 0;
 	overflow: hidden;
-	font-family: "Aldrich", sans-serif;
+	font-family: 'Dosis', sans-serif;
 }
 
 .container
@@ -88,6 +88,68 @@ body
 	margin-bottom: 50px;
 }
 
+.about
+{
+	margin-top: 260px;
+	margin-left: 8%;
+}
+
+
+.aboutTitle
+{
+	font-size: 14;
+}
+
+.aboutName
+{
+	margin-top: 40px;
+	margin-bottom: 20px;
+}
+
+.aboutTitle, .aboutName
+{
+	font-family: 'Dosis', sans-serif;
+	text-transform: uppercase;
+    	font-weight: 400;
+    	letter-spacing: 10px;
+    	color: #fff;
+    	opacity: .9;
+}
+
+.aboutDescription
+{
+	opacity: .45;
+}
+
+.aboutDescription, .aboutEmail
+{
+	margin-top: 5px;
+   	position: relative;
+    	font-size: 14;
+    	font-weight: 300;
+    	line-height: 1.2;
+}
+
+.aboutEmail
+{
+	margin-left: 15px;
+	margin-top: 10px;
+	text-transform: unset;
+}
+
+.displayBlock
+{
+	display: block;
+}
+
+.contactInformation
+{
+	clear: both;
+	position: absolute;
+	bottom: 0;
+	margin-bottom: 90px;
+}
+
 h6
 {
 	font-size: 12;
@@ -98,14 +160,16 @@ h6
 	padding-left: 31px;
 	margin-top: 35px;
 	color: white;
-	font-family: "Aldrich", sans-serif;
+	font-family: 'Dosis', sans-serif;
 }
 
 .titleName
 {
 	display: inline-block;
+	font-family: 'Dosis', sans-serif;
 	width: 25px;
 	padding-left: 20px;
+	letter-spacing: 3px;
 	font-size: 25;
 }
 
@@ -189,7 +253,7 @@ li
 {
 	padding: 6px 0;
 	padding-left: 5%;
-	font-family: "Aldrich", sans-serif;
+	font-family: 'Dosis', sans-serif;
 }
 
 a 
@@ -197,7 +261,7 @@ a
       position: relative;
       display: inline-block;
       padding: 4px 0;
-      font-family: "Aldrich", sans-serif;
+      font-family: 'Dosis', sans-serif;
       font-size: 12px;
       color: #ecf0f1;
       text-decoration: none;
@@ -915,4 +979,97 @@ right: 0;
 margin: auto;
 content: "";
 transform: rotate(60deg);
+}
+
+/* Skill set */
+.skills .skill{
+  width: 245px;
+  margin-bottom: 30px;
+}
+
+.skills .skill .skill-title{
+  text-transform: uppercase;
+  font-size: 12;
+  color: white;
+  letter-spacing: 2px;
+  margin-bottom: 5px;
+}
+
+.skills .skill .skill-grade75{
+  height: auto;
+  box-sizing: border-box;
+  border-radius: 3px;
+  border: 1px solid #DDD;
+  overflow: hidden;
+}
+
+.skills .skill .skill-grade80{
+  height: auto;
+  box-sizing: border-box;
+  border-radius: 3px;
+  border: 1px solid #DDD;
+  overflow: hidden;
+}
+
+
+.skills .skill .skill-grade85{
+  height: auto;
+  box-sizing: border-box;
+  border-radius: 3px;
+  border: 1px solid #DDD;
+  overflow: hidden;
+}
+
+
+.skills .skill .skill-grade75:before{
+	width: 75%;
+}
+
+.skills .skill .skill-grade80:before{
+	width: 80%;
+}
+
+.skills .skill .skill-grade85:before{
+	width: 85%;
+}
+
+.skills .skill .skill-grade75:before{
+    display: block;
+    content:' ';
+    height: 4px;
+    background: rgba(0,0,0,0.1);
+    border: 1px solid #fff;
+    animation-name: example;
+    animation-duration: 3s;
+    animation-iteration: 1;
+    animation-timing-function: ease-in;
+}
+
+.skills .skill .skill-grade80:before{
+    display: block;
+    content:' ';
+    height: 4px;
+    background: rgba(0,0,0,0.1);
+    border: 1px solid #fff;
+    animation-name: example;
+    animation-duration: 3s;
+    animation-iteration: 1;
+    animation-timing-function: ease-in;
+}
+
+.skills .skill .skill-grade85:before{
+    display: block;
+    content:' ';
+    height: 4px;
+    background: rgba(0,0,0,0.1);
+    border: 1px solid #fff;
+    animation-name: example;
+    animation-duration: 3s;
+    animation-iteration: 1;
+    animation-timing-function: ease-in;
+}
+
+@keyframes example {
+    0%   {width: 0%}
+
 }
