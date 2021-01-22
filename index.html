@@ -1,38 +1,427 @@
 <html lang="en">
   <head>
-    <!-- Required meta tags -->
+    <!-- Meta Tags -->
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-
-    <title>Hello, world!</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="description" content="Portfolio made by Sander Lemmen">
+    <meta name="keywords" content="Sander Lemmen, Portfolio, Programmer, Artificial Intelligence, Game Development, Application Development">
+    <meta name="author" content="Sander Lemmen">
+    <meta http-equiv="ScreenOrientation" content="autoRotate:disabled">
+    <!-- CSS and Icon -->
+    <link href="bootstrap.css" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="main.css" rel="stylesheet">
+    <link href="" rel="shortcut icon">
+    <!-- Title -->
+    <title>Sander Lemmen - Portfolio</title>
   </head>
 
   <body>
-    <div class="row">
-      <div class="col-xs-6">
-        tesxxt
-      </div>
-      <div class="col-xs-6">
-        twtsfdfsd
-      </div>
-    </div>
+    <header>
+      <div class="row">
+        <div class="col-sm-12 col-lg-6">
+          <div class="title">
+            <img class="logo" src="Images/Logo.png">
+            <h1 class="titleName">Sander Lemmen</h1>
+          </div>
+        </div>
 
-    <div class="row">
-      <div class="col-xs-6"> ttt
+        <div class="col-sm-12 col-lg-6">
+          <ul id="menu">
+            <li><a class="active" data-page="projects" href="#">Projects</a></li>
+            <li><a data-page="jobs" href="#">Jobs & Educations</a></li>
+            <li><a data-page="certificates" href="#">Certificates & Publication</a></li>
+            <li><a data-page="about" href="#">About</a></li>
+          </ul>
+        </div>
       </div>
-      <div class="col-xs-4"> ggg
+    </header>
+
+    <verticalLineLeft></verticalLineLeft>
+    <verticalLineRight></verticalLineRight>
+
+    <pageswitcher></pageswitcher>
+
+    <!-- Projects -->
+    <projects class="page">
+      <ul id="projectsList">
+        <li data-id="0">-</li>
+        <li data-id="1">Fairytale Fix-Up</li>
+        <li data-id="2" class="active">Last Resort</li>
+        <li data-id="3">Raytracer</li>
+        <li data-id="4">-</li>
+      </ul>
+
+      <lastResort class="row">
+        <div class="col-sm-12 col-lg-6" style="color: white;">
+          <ul class="projectImagesList">
+            <li data-id="0" class="active">01</li>
+            <li data-id="1">02</li>
+            <li data-id="2">03</li>
+          </ul>
+
+          <images>
+            <div class="backgroundLeft" style="background-color: #d0cdb3;">
+              <img class="imageBackground" src="Images/LastResortOne.jpg" />
+            </div>
+
+            <div class="backgroundLeft" style="background-color: #d0cdb3; top: 100%;">
+              <img class="imageBackground" src="Images/LastResortOne.png" />
+            </div>
+
+            <div class="backgroundLeft" style="top: 200%;">
+              <img class="imageBackground" src="Images/AIBackground.jpg" />
+            </div>
+          </images>
+        </div>
+
+        <div class="col-sm-12 col-lg-6" style="background-color: black;">
+          <div class="SmallDescriptionProject">
+            <h1 class="titleProject">Last Resort</h1>
+            <h6>AI programmer and QA manager</h6>
+            <h6>25 Developers</h6>
+            <h6>One Year</h6>
+          </div>
+
+          <div class="readMore">
+            <a href="#popup1">Read more...</a>
+          </div>
+          <div id="popup1" class="popup">
+            <a href="#" class="close">&times;</a>
+            <h2>Last Resort</h2>
+            <p>Additional information...</p>
+          </div>
+          <a href="#" class="close-popup"></a>
+        </div>
+      </lastResort>
+
+      <raytracer id="raytracer" class="row" style="top: 100%">
+        <div class="col-sm-12 col-lg-6" style="background-color: #124940; color: white;">
+          <div style="margin-top: 150px;"> vcbbvnnbcn </div>
+        </div>
+
+        <div class="col-sm-12 col-lg-6" style="background-color: orange;">
+          ,m,,.n,m.,m.,m
+        </div>
+      </raytracer>
+    </projects>
+
+    <!-- Jobs -->
+    <jobs class="page" style="display: none;">
+      <div class="row">
+        <div class="col-sm-12 col-lg-6" style="color: white;">
+          <div class="background">
+            <img class="imageBackground" src="Images/JobsBackgroundSecond.jpg" />
+          </div>
+
+          <div class="jobs">
+            <h1 class="titleProject">Jobs</h1>
+
+            <section class="accordion" style="width: 100%;">
+              <input type="checkbox" class="jobDetails" name="collapse" id="handle1">
+              <h2 class="handle">
+                <label for="handle1">
+                  <div class='jobTitleDiv'>
+                    <h2 class='jobTitle'>SwingBy</h2>
+                    <h2 class='jobLocation'>Venlo, Limburg</h2>
+                    <h2 class='jobLocationTitle'>Location:</h2>
+                  </div>
+                  <div class='jobTypeDiv'>
+                    <h2 class='jobType'>Software Engineer</h2>
+                    <h2 class='jobDate'>Feb. 2018 - Sep. 2019</h2>
+                    <h2 class='jobDateTitle'>Date:</h2>
+                  </div>
+                  <div>
+                    <h4 class='jobViewDetails'>View details</h4>
+                  </div>
+                </label>
+              </h2>
+              <div class="content">
+                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
+              </div>
+            </section>
+
+            <section class="accordion" style="width: 100%;">
+              <input type="checkbox" class="jobDetails" name="collapse" id="handle1">
+              <h2 class="handle">
+                <label for="handle1">
+                  <div class='jobTitleDiv'>
+                    <h2 class='jobTitle'>SwingBy</h2>
+                    <h2 class='jobLocation'>Venlo, Limburg</h2>
+                    <h2 class='jobLocationTitle'>Location:</h2>
+                  </div>
+                  <div class='jobTypeDiv'>
+                    <h2 class='jobType'>Software Engineer</h2>
+                    <h2 class='jobDate'>Feb. 2018 - Sep. 2019</h2>
+                    <h2 class='jobDateTitle'>Date:</h2>
+                  </div>
+                  <div>
+                    <h4 class='jobViewDetails'>View details</h4>
+                  </div>
+                </label>
+              </h2>
+              <div class="content">
+                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
+              </div>
+            </section>
+          </div>
+        </div>
+
+        <div class="col-sm-12 col-lg-6">
+          <h1 class="titleProject">Education</h1>
+
+          <section class="accordion">
+            <input type="checkbox" class="jobDetails" name="collapse" id="handle1">
+            <h2 class="handle">
+              <label for="handle1">
+                <div class='jobTitleDiv'>
+                  <h2 class='jobTitle'>SwingBy</h2>
+                  <h2 class='jobLocation'>Venlo, Limburg</h2>
+                  <h2 class='jobLocationTitle'>Location:</h2>
+                </div>
+                <div class='jobTypeDiv'>
+                  <h2 class='jobType'>Software Engineer</h2>
+                  <h2 class='jobDate'>Feb. 2018 - Sep. 2019</h2>
+                  <h2 class='jobDateTitle'>Date:</h2>
+                </div>
+                <div>
+                  <h4 class='jobViewDetails'>View details</h4>
+                </div>
+              </label>
+            </h2>
+            <div class="content">
+              Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
+            </div>
+          </section>
+
+          <section class="accordion">
+            <input type="checkbox" class="jobDetails" name="collapse" id="handle1">
+            <h2 class="handle">
+              <label for="handle1">
+                <div class='jobTitleDiv'>
+                  <h2 class='jobTitle'>SwingBy</h2>
+                  <h2 class='jobLocation'>Venlo, Limburg</h2>
+                  <h2 class='jobLocationTitle'>Location:</h2>
+                </div>
+                <div class='jobTypeDiv'>
+                  <h2 class='jobType'>Software Engineer</h2>
+                  <h2 class='jobDate'>Feb. 2018 - Sep. 2019</h2>
+                  <h2 class='jobDateTitle'>Date:</h2>
+                </div>
+                <div>
+                  <h4 class='jobViewDetails'>View details</h4>
+                </div>
+              </label>
+            </h2>
+            <div class="content">
+              Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
+            </div>
+          </section>
+        </div>
       </div>
-      <div class="col-xs-2"> hhhh
+    </jobs>
+
+    <!-- Experience -->
+    <experience class="page" style="display: none;">
+      <div class="row">
+        <div class="col-sm-12 col-lg-6" style="background-color: #024940; color: white;">
+          <div style="margin-top: 150px;"> tsetsetetstest </div>
+        </div>
+
+        <div class="col-sm-12 col-lg-6">
+          testest
+          <div class="backgroundRight">
+            <img class="imageBackground" src="Images/AboutBackground2.jpg" />
+          </div>
+        </div>
       </div>
-    </div>  
+    </experience>
+
+    <!-- Contact -->
+    <about class="page" style="display: none;">
+      <div class="row">
+        <div class="col-sm-12 col-lg-6" style="background-color: #024940; color: white;">
+          <div style="margin-top: 150px;"> tsetsetetstest </div>
+        </div>
+
+        <div class="col-sm-12 col-lg-6">
+          <section class="intro">
+
+          <div class="intro-block">
+            <div class="centerfold-wrap">
+              <div class="hex-master-wrap">
+                  <div class="hover-notify">Hover Me!</div>
+                <div class="grid-1">
+                  <div class="hex-wrap backend" data-title="BACKEND" data-content="backend-desc" data-color="#333333">
+                      <div class="hex-init"></div>
+                      <div class="hex-borders">
+                        <div class="border-1"></div>
+                        <div class="border-2"></div>
+                        <div class="border-3"></div>
+                      </div>
+                      <div class="label"><img src="https://i.imgur.com/3XjDZGJ.png"/></div>
+                    <div class="hexagon">
+                      <div class="hex-inner-1">
+                        <div class="hex-inner-2"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="hex-wrap frontend" data-title="FRONTEND" data-content="frontend-desc" data-color="#16A085">
+                      <div class="hex-init"></div>
+                      <div class="hex-borders">
+                        <div class="border-1"></div>
+                        <div class="border-2"></div>
+                        <div class="border-3"></div>
+                      </div>
+                      <div class="label"><img src="https://i.imgur.com/f8WewU1.png"/></div>
+                    <div class="hexagon">
+                      <div class="hex-inner-1">
+                        <div class="hex-inner-2"></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="grid-2">
+                  <div class="hex-wrap html" data-title="HTML5" data-content="html-desc" data-color="#E34C26">
+                      <div class="hex-init"></div>
+                      <div class="hex-borders">
+                        <div class="border-1"></div>
+                        <div class="border-2"></div>
+                        <div class="border-3"></div>
+                      </div>
+                      <div class="label"><img src="https://i.imgur.com/CHmGJ8M.png"/></div>
+                    <div class="hexagon">
+                      <div class="hex-inner-1">
+                        <div class="hex-inner-2"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="hex-wrap css" data-title="CSS3" data-content="css-desc" data-color="#0083de">
+                      <div class="hex-init"></div>
+                      <div class="hex-borders">
+                        <div class="border-1"></div>
+                        <div class="border-2"></div>
+                        <div class="border-3"></div>
+                      </div>
+                      <div class="label"><img src="https://i.imgur.com/kUSks3I.png"/></div>
+                    <div class="hexagon">
+                      <div class="hex-inner-1">
+                        <div class="hex-inner-2"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="hex-wrap jquery" data-title="JAVASCRIPT" data-content="javascript-desc" data-color="#8cc84b">
+                      <div class="hex-init"></div>
+                      <div class="hex-borders">
+                        <div class="border-1"></div>
+                        <div class="border-2"></div>
+                        <div class="border-3"></div>
+                      </div>
+                      <div class="label"><img src="https://i.imgur.com/5B9usMm.png"/></div>
+                    <div class="hexagon">
+                      <div class="hex-inner-1">
+                        <div class="hex-inner-2"></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="grid-3">
+                  <div class="hex-wrap gui" data-title="USER INTERFACE" data-content="gui-desc" data-color="#2C3E52">
+                      <div class="hex-init"></div>
+                      <div class="hex-borders">
+                        <div class="border-1"></div>
+                        <div class="border-2"></div>
+                        <div class="border-3"></div>
+                      </div>
+                      <div class="label"><img src="https://i.imgur.com/3dXtbto.png"/></div>
+                    <div class="hexagon">
+                      <div class="hex-inner-1">
+                        <div class="hex-inner-2"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="hex-wrap seo" data-title="SEO" data-content="seo-desc" data-color="#C0392B">
+                      <div class="hex-init"></div>
+                      <div class="hex-borders">
+                        <div class="border-1"></div>
+                        <div class="border-2"></div>
+                        <div class="border-3"></div>
+                      </div>
+                      <div class="label"><img src="https://i.imgur.com/FkEYVo6.png"/></div>
+                    <div class="hexagon">
+                      <div class="hex-inner-1">
+                        <div class="hex-inner-2"></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="code-display">
+                <div class="code-description">
+                  <div class="backend-desc">
+                    <p class="code-title"></p>
+                    <p><span>Duration:</span>4 Years</p>
+                    <p><span>Experience</span>PHP, SQL, NodeJS, Ruby</p>
+                    <div class="code-icon"></div>
+                  </div>
+                  <div class="frontend-desc">
+                    <p class="code-title"></p>
+                    <p><span>Duration:</span>6 Years</p>
+                    <p><span>Experience</span>HTML, CSS, Javascript + Branches</p>
+                    <div class="code-icon"></div>
+                  </div>
+                  <div class="html-desc">
+                    <p class="code-title"></p>
+                    <p><span>Duration:</span>6 Years</p>
+                    <p><span>Experience</span>HTML5 (most recent)</p>
+                    <div class="code-icon"></div>
+                  </div>
+                  <div class="css-desc">
+                    <p class="code-title"></p>
+                    <p><span>Duration:</span>6 Years</p>
+                    <p><span>Experience</span>CSS3 (most recent)</p>
+                    <div class="code-icon"></div>
+                  </div>
+                  <div class="javascript-desc">
+                    <p class="code-title"></p>
+                    <p><span>Duration:</span>4 Years</p>
+                    <p><span>Experience</span>Javascript, Jquery, AngularJS, NodeJS</p>
+                    <div class="code-icon"></div>
+                  </div>
+                  <div class="gui-desc">
+                    <p class="code-title"></p>
+                    <p><span>Duration:</span>4 Years</p>
+                    <p><span>Experience</span>Wordpress, Custom GUI Creation</p>
+                    <div class="code-icon"></div>
+                  </div>
+                  <div class="seo-desc">
+                    <p class="code-title"></p>
+                    <p><span>Duration:</span>4 Years</p>
+                    <p><span>Experience</span>Up-to-date SEO Practices</p>
+                    <div class="code-icon"></div>
+                  </div>
+                </div>
+
+              </div>
+                <div class="hoverblock"></div>
+            </div> <!-- End Centerfold-Wrap -->
+          </div>
+
+        </section>
+
+          <div class="backgroundRight">
+            <img class="imageBackground" src="Images/AboutBackground2.jpg" />
+          </div>
+        </div>
+      </div>
+    </about>
     
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <!-- JQuery and Bootstrap -->
+    <script src="jquery.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/velocity/1.1.0/velocity.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/velocity/1.1.0/velocity.ui.js"></script>
+    <script src="main.js"></script>
+    <script src="bootstrap.js"></script>
   </body>
 </html>
