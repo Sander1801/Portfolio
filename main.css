@@ -1886,7 +1886,7 @@ transform: rotate(60deg);
 		font-size: 13;
 	}
 
-	.skill-title
+	.skills .skill .skill-title
 	{
 		font-size: 10;
 	}
