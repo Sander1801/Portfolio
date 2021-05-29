@@ -1864,19 +1864,19 @@ transform: rotate(60deg);
 }
 
 
-@media screen and (max-width: 450px)
+@media screen and (max-width: 430px)
 {
 	.jobLocationAndTime
 	{
 		margin-left: 15px;
 	}
 
-	.aboutTitle
+	.aboutTitle, .jobLocation, .jobDate, .jobTitle, .companyHref, .jobDescription, .jobTags, .jobTime
 	{
 		font-size: 15;
 	}
 
-	.aboutName
+	.aboutName, .titleProject, .titleProjectWhite
 	{
 		font-size: 27;
 	}
