@@ -1871,12 +1871,12 @@ transform: rotate(60deg);
 		margin-left: 15px;
 	}
 
-	.aboutTitle, .jobLocation, .jobDate, .jobTitle, .companyHref, .jobDescription, .jobTags, .jobTime
+	.aboutTitle, .jobLocation, .jobDate, .jobTitle, .companyHref, .jobDescription, .jobTags, .jobTime, .publicationText, .certificateText
 	{
 		font-size: 15;
 	}
 
-	.aboutName, .titleProject, .titleProjectWhite
+	.aboutName, .titleProject, .titleProjectWhite, .certificateTitle, .publicationTitle
 	{
 		font-size: 27;
 	}
