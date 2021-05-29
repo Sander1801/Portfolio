@@ -1,1 +1,220 @@
-$(document).ready(function(){$("#projectsList li").each(function(t,i){if($(this).hasClass("active"))return!1}),$("ul#menu li a").click(function(){var t;$(this).hasClass("active")||($("#menu li a").removeClass("active"),$(this).addClass("active"),t=$(this).attr("data-page"),$("pageswitcher").animate({left:"0"},600,function(){$("*.page").hide(),$(t).show(),$("pageswitcher").animate({left:"-100%"},600,function(){$("pageswitcher").css("left","100%")})}),setTimeout(function(){"projects"==t?($("verticalLineLeft").show(),$("verticalLineRight").show()):($("verticalLineLeft").hide(),$("verticalLineRight").hide()),"jobs"==t||"certificates"==t?($(".titleName").css("color","black"),$(".menuItem").css("color","black"),$(".jobRow").trigger("focus")):($(".titleName").css("color","white"),$(".menuItem").css("color","white"))},600))}),$("ul#projectsList li").click(function(){var t;$(this).hasClass("active")||($("projects").stop(),$("#projectsList li").removeClass("active"),$(this).addClass("active"),t=100*-$(this).attr("data-id"),$("projects").animate({top:t+"%"},600,function(){}))}),$("ul.projectImagesList li").click(function(){var t;$(this).hasClass("active")||($imagesElement=$(this).parent().parent().find("images"),$imagesElement.stop(),$(this).addClass("active").siblings().removeClass("active"),t=-100*$(this).attr("data-id"),$imagesElement.animate({top:t+"%"},600,function(){}))}),$(".jobDetails").click(function(){$clickedJob=this,$(".jobDetails").each(function(){$clickedJob!=this&&$(this).prop("checked",!1)})});var t=!1;$(".skillsetOpenBar").click(function(){t=!t;$(".skillsetOpenBar").animate({right:t?"45%":"-2%"},600,function(){})})});
+$(document).ready(function()
+{
+  var blackMenuColor = false;
+
+  const navLinks = document.querySelectorAll('.nav-item')
+  const menuToggle = document.getElementById('navbarSupportedContent')
+  const bsCollapse = new bootstrap.Collapse(menuToggle)
+  navLinks.forEach((l) => 
+  {
+      l.addEventListener('click', () => 
+      { 
+        const width = $(window).width();
+
+        if (width < 992)
+        {
+          bsCollapse.toggle(); 
+        }
+      })
+  })
+
+  $(".navbar-toggler").click(function()
+  {
+    if ($(this).hasClass("collapsed") && blackMenuColor) 
+    {
+      $(".nav-link").css("color", "white");
+    }
+    else if (!$(this).hasClass("collapsed") && blackMenuColor) 
+    {
+      setTimeout(
+        function() 
+        {
+          $(".nav-link").css("color", "black");
+        }, 
+        1500
+      );
+    }
+  });
+
+  var currentProjectID = -1;
+
+	// Find the active project ID.
+	$('#projectsList li').each(function(i, obj) 
+	{
+		currentProjectID++;
+
+		// Found the active class, stop the each loop.
+		if ($(this).hasClass("active")) return false;
+	});
+
+  	$('ul#menu li a').click(function()
+  	{ 
+  		// The selected menu item is already active.
+  		if ($(this).hasClass("active")) return
+
+  		// Remove 'active' and add it to the selected menu item.
+  		$('#menu li a').removeClass("active");
+  		$(this).addClass("active");
+
+  		// Get the name of the page we should display.
+  		const newPageName = $(this).attr("data-page");
+  		const slideDuration = 600;
+
+  		// Slide a div before the selected page will be displayed.
+		  $("pageswitcher").animate({ left: "0" }, slideDuration, function() 
+	  	{
+	  		// Hide all page classes.
+	  		// Could be optimized by doing it once and storing the elements.
+	  		$('*.page').hide();
+
+	  		// Display the selected page.
+		    $(newPageName).show();
+
+		    // Slide the 'pageswitcher' away from the screen.
+		    $("pageswitcher").animate({ left: "-100%" }, slideDuration, function()
+	    	{
+	    		// Set the 'pageswitcher' back to the begin position.
+	    		$("pageswitcher").css("left", "100%");
+
+          if (newPageName == "about")
+          {
+            $(".skillsetOpenBar").css("animation", "skillsetButtonAnimation 3s");
+          }
+	    	});
+	  	});
+
+	  	setTimeout(function()
+	  	{ 
+		  	if (newPageName == "projects") 
+		  	{
+		    	$('verticalLineLeft').show();
+		    	$('verticalLineRight').show();
+  			}
+  			else
+  			{
+  				$('verticalLineLeft').hide();
+  				$('verticalLineRight').hide();
+  			}
+
+  			if (newPageName == "jobs" || newPageName == "certificates") 
+		  	{
+		  		$(".titleName").css("color", "black");
+		  		$(".nav-link").css("color", "black");
+          $(".navbar-toggler").css("border-color", "black");
+          $(".navbar-toggler-icon").addClass("navbar-toggler-icon-black");
+          $(".navbar-toggler-icon").removeClass("navbar-toggler-icon-white");
+
+		  		$(".jobRow").trigger("focus");
+          blackMenuColor = true;
+		  	}
+		  	else
+		  	{
+		  		$(".titleName").css("color", "white");
+		  		$(".nav-link").css("color", "white");
+          $(".navbar-toggler").css("border-color", "white");
+          $(".navbar-toggler-icon").removeClass("navbar-toggler-icon-black");
+          $(".navbar-toggler-icon").addClass("navbar-toggler-icon-white");
+		  	}
+	  	}, slideDuration / 1);
+  	});
+
+	$('ul#projectsList li').click(function()
+  {
+  		// The selected project item is already active.
+  		if ($(this).hasClass("active")) return
+
+  		// Stop the animation if one is currently playing.
+  		$("projects").stop();
+
+		  // Remove 'active' and add it to the selected project item.
+  		$('#projectsList li').removeClass("active");
+  		$(this).addClass("active");
+
+  		// Get the name of the page we should display.
+  		const newProjectID = $(this).attr("data-id");
+  		const differenceID = -newProjectID;
+  		const percentageToSlide = differenceID * 100;
+  		const slideDuration = 600;
+
+    		// Slide a div before the selected page will be displayed.
+		  $("projects").animate({ top: percentageToSlide + "%" }, slideDuration, function() 
+	  	{});
+  	});
+
+  	$('ul.projectImagesList li').click(function()
+  	{
+  		// The selected project item is already active.
+  		if ($(this).hasClass("active")) return
+  		
+  		// Get images element.
+  		$imagesElement = $(this).parent().parent().find('images');
+
+  		// Stop the animation if one is currently playing.
+  		$imagesElement.stop();
+
+		  // Remove 'active' and add it to the selected project item.
+  		$(this).addClass('active').siblings().removeClass('active');
+
+  		// Get the name of the page we should display.
+  		const newProjectID = $(this).attr("data-id");
+  		const percentageToSlide = newProjectID * -100;
+  		const slideDuration = 600;
+
+  		// Slide a div before the selected page will be displayed.
+		  $imagesElement.animate({ top: percentageToSlide + "%" }, slideDuration, function() { });
+  	});
+
+  	$('.jobDetails').click(function()
+  	{
+  		$clickedJob = this;
+
+  		$(".jobDetails").each(function()
+  		{
+  			if ($clickedJob != this)
+  			{
+				  $(this).prop("checked", false);
+			  }
+	    });
+  	});
+
+  	var skillsetOpen = false;
+
+  	$('.skillsetOpenBar').click(function()
+  	{
+  		if (skillsetOpen) skillsetOpen = false;
+  		else skillsetOpen = true;
+
+  		const slideDuration = 600;
+      const width = $(window).width();
+
+      var responsivePercentage;
+
+      if (width > 1100)
+      {
+        responsivePercentage = "45%";
+      }
+      else if (width > 890)
+      {
+        responsivePercentage = "55%";
+      }
+      else if (width > 750)
+      {
+        responsivePercentage = "65%";
+      }
+      else if (width > 650)
+      {
+        responsivePercentage = "75%";
+      }
+      else
+      {
+        responsivePercentage = "82%";
+
+        $('.skills .skill .skill-title').css("margin-top", "-2px");
+        $('.skillset').css("height", "530px");
+        $('.skillset').css("top", "calc(50% - 215px)");
+        $('.skills-tools').css("width", "280px");
+      }
+
+  		$('.skillsetOpenBar').animate({ right: (skillsetOpen) ? responsivePercentage : "0%" }, slideDuration, function() { });
+  	});
+});

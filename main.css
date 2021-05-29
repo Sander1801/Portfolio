@@ -110,9 +110,17 @@ h2
 	width: 75px;
   	height: 140px;
   	top: 50%;
-  	right: -2%;
+  	right: 0%;
+	margin-right: -25px;
   	position: absolute;
   	transform: translate(0, -50%);
+}
+
+@keyframes skillsetButtonAnimation 
+{
+  0%   { margin-right: -25px; }
+  50%  { margin-right: 8px; }
+  100% { margin-right: -25px; }
 }
 
 .skillsetText
@@ -130,10 +138,54 @@ h2
     	color: white;
 }
 
+.nav-item
+{
+	padding-left: 0%;
+	margin-left: 30px;
+}
+
+.navbar-nav
+{
+	margin-right: 60px;
+}
+
+.navbar-collapse
+{
+    	margin-top: 65px;
+}
+
+.navbar-toggler
+{
+	color: rgba(0,0,0,.55);
+	border-color: white;
+    	margin-right: 60px;
+    	margin-top: 40px;
+    	padding-left: 6;
+    	padding-right: 6;
+    	padding-top: 1;
+    	padding-bottom: 1;
+}
+
+.navbar-toggler-icon-white
+{
+	background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='white' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+.navbar-toggler-icon-black
+{
+	background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='black' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+.navbar-toggler:focus
+{
+	box-shadow: none;
+}
+
 .about
 {
 	margin-top: 260px;
 	margin-left: 31px;
+	margin-right: 50px;
 }
 
 
@@ -201,8 +253,9 @@ h6
 
 .title
 {
-	padding-left: 31px;
+	padding-left: 50px;
 	margin-top: 35px;
+	display: flex;
 	color: white;
 	font-family: 'Dosis', sans-serif;
 }
@@ -292,13 +345,6 @@ h6
       margin-top: 80px;
 }
 
-.publicationBox
-{
-	margin-top: 20px; 
-	width: 270px;
-	height: 80px;
-}
-
 .publicationRow
 {
 	height: auto; 
@@ -308,14 +354,14 @@ h6
 .certificateColumn
 {
 	margin-top: 20px; 
-	margin-right: 30px; 
+	padding-left: 30px;
 	padding-right: 30px;
 }
 
 .sentryLink
 {
 	width: 100%; 
-	height: 100%; 
+	height: auto; 
 	position: absolute; 
 	z-index: 10;
 }
@@ -372,7 +418,6 @@ h6
 
 #menu
 {
-	margin-top: 60px;
 	margin-left: -30px;
 	padding-left: 0px;
 }
@@ -492,13 +537,13 @@ p
       font-size: 16px!important;
       font-family: 'Graphik', 'Arial', sans-serif!important;
       padding: 0!important;
-    	margin-left: 8!important;
 }
 
 .jobTitle
 {
 	display: inline-block; 
 	font-weight: bold;
+	margin-right: 8!important;
 }
 
 projects
@@ -527,7 +572,7 @@ ul#projectsList
   	right: 60px;
   	top: calc(50% - 75px);
   	position: fixed;
-  	z-index: 100;
+  	z-index: 99;
 }
 
 ul#menu a.active
@@ -714,7 +759,7 @@ images
 .jobLocationAndTime
 {
 	min-width: 180px; 
-	max-width: 180px;
+	max-width: 190px;
 	margin-top: 20px;
 }
 
@@ -1361,7 +1406,7 @@ transform: rotate(60deg);
 
 .skill
 {
-	display: inline-block;
+	display: block;
 }
 
 .skills-tools
@@ -1650,7 +1695,9 @@ transform: rotate(60deg);
 {
 	opacity: 1;
 	display: block;
-	width: 100%;
+	margin-left: auto;
+	margin-right: auto;
+	width: 50%;
 	height: auto;
 	transition: .5s ease;
 	backface-visibility: hidden;
@@ -1682,4 +1729,158 @@ transform: rotate(60deg);
 .box-overlay:hover .box-middle  
 {
 	opacity: 1;
+}
+
+@media screen and (max-width: 991px)
+{
+	ul#menu
+	{
+		flex-direction: column;
+    		align-items: flex-start;
+	  	margin-left: -15px!important;
+	}
+
+	.navbar-collapse
+	{
+		background-color: rgb(17, 17, 17);
+		margin-top: 0px;
+	   	margin-right: 58px;
+   	 	margin-left: 48px;
+   	 	height: 165px;
+   	 	opacity: 0.9;
+	}
+
+	verticalLineLeft, verticalLineRight
+	{
+		display: none;
+	}
+
+	.about
+	{
+	      margin-top: 200px;
+	}
+}
+
+@media screen and (max-width: 511px)
+{
+	.about
+	{
+	      margin-top: 150px;
+	}
+}
+
+@media screen and (max-width: 649px)
+{
+	.skill-grade70, .skill-grade75, .skill-grade80, .skill-grade85
+	{
+	      width: 240px;
+	}
+}
+
+@media screen and (max-width: 768px)
+{
+	.certificateTitle, .publicationTitle
+	{
+		text-align: center;
+	}
+
+	.box-image
+	{
+		width: 30%;
+	}
+
+	.sentryBoxImage
+	{
+		width: 50%!important;
+	}
+
+	.publicationRow
+	{
+		margin-top: 0px;
+	}
+
+	.certificateColumn
+	{
+		margin-bottom: 20px;
+	}
+}
+
+@media screen and (max-width: 835px)
+{
+	.headerWhiteBackground
+	{
+	      width: 94%;
+	}
+}
+
+@media screen and (min-width: 814px) and (max-width: 853px)
+{
+	.jobImageLine, .educationImageLine
+	{
+		height: 240px;
+	}
+}
+
+@media screen and (min-width: 724px) and (max-width: 813px)
+{
+	.jobImageLine, .educationImageLine
+	{
+		height: 300px;
+	}
+}
+
+@media screen and (max-width: 729px)
+{
+	.jobMainDiv
+	{
+		display: block;
+		margin-top: 40px;
+	}
+
+	.jobCircleImage
+	{
+		margin-left: 0px;
+		margin-bottom: 16px;
+		display: inline-block;
+		float: left;
+	}
+
+	.jobLocationAndTime
+	{
+		display: inline-block;
+		margin-left: 30px;
+	}
+
+	.jobInfo
+	{
+		margin-left: 0px;
+		margin-top: 20px;
+	}
+
+	.jobImageLine, .educationImageLine
+	{
+		display: none;
+	}
+}
+
+@media screen and (min-width: 1201px)
+{
+	.box-image 
+	{
+		width: 40%;
+	}
+}
+
+@media screen and (min-width: 1250px)
+{
+	.certificateText
+	{
+		padding-left: 70px;
+		padding-right: 70px;
+	}
+}
+
+.sentryBoxImage
+{
+	width: 80%;
 }

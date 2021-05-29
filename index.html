@@ -9,7 +9,7 @@
     <meta http-equiv="ScreenOrientation" content="autoRotate:disabled">
     <!-- CSS and Icon -->
     <link href="bootstrap.css" rel="stylesheet">
-    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <link href="main.css" rel="stylesheet">
     <link href="" rel="shortcut icon">
     <!-- Title -->
@@ -18,23 +18,43 @@
 
   <body>
     <header>
-      <div class="row menuRow">
+      <!-- <div class="row menuRow">
         <div class="col-sm-12 col-lg-6">
           <div class="title">
             <img class="logo" src="Images/LogoAI.png">
             <h1 class="titleName">Sander Lemmen</h1>
           </div>
-        </div>
+        </div> -->
 
-        <div class="col-sm-12 col-lg-6">
+        <nav class="navbar navbar-expand-lg">
+          <div class="title">
+            <img class="logo" src="Images/LogoAI.png">
+            <h1 class="titleName">Sander Lemmen</h1>
+          </div>
+
+          <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon navbar-toggler-icon-white"></span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ms-auto" id="menu">
+              <li class="nav-item"><a class="nav-link active" data-page="projects" href="#">Projects</a></li>
+              <li class="nav-item"><a class="nav-link" data-page="jobs" href="#">Jobs & Educations</a></li>
+              <li class="nav-item"><a class="nav-link" data-page="certificates" href="#">Certificates & Publication</a></li>
+              <li class="nav-item"><a class="nav-link" data-page="about" href="#">About</a></li>
+            </ul>
+          </div>
+        </nav>
+
+        <!--<div class="col-sm-12 col-lg-6">
           <ul id="menu">
             <li><a class="active menuItem" data-page="projects" href="#">Projects</a></li>
             <li><a class="menuItem" data-page="jobs" href="#">Jobs & Educations</a></li>
             <li><a class="menuItem" data-page="certificates" href="#">Certificates & Publication</a></li>
             <li><a class="menuItem" data-page="about" href="#">About</a></li>
           </ul>
-        </div>
-      </div>
+        </div> -->
+      <!--</div> -->
     </header>
 
     <verticalLineLeft></verticalLineLeft>
@@ -208,7 +228,7 @@
             <div class="trailerDiv">
               <h4>Trailer</h4>
 
-              <iframe width="560" height="315" src="https://www.youtube.com/embed/FqNHop80wUo?autoplay=1" title="Fairytale Fix-Up" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+              <iframe width="560" height="315" src="https://www.youtube.com/embed/FqNHop80wUo" title="Fairytale Fix-Up" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
               </iframe>
             </div>
 
@@ -413,7 +433,7 @@
             <div class="jobInfo">
               <div class="jobMainInfo">
                   <p class="jobTitle">Web and Mobile Developer -</p>
-                  <a class="companyHref" href="https://www.swingby.at/" target="_blank">SwingBy</a>
+                  <a class="companyHref swingByHref" href="https://www.swingby.at/" target="_blank">SwingBy</a>
               </div>
                
               <div class="jobAdditionalInfo">
@@ -504,32 +524,41 @@
         <h1 class="titleProject certificateTitle">Certificates</h1>
 
         <div class="row" style="height: auto; margin-top: 10px;">
-          <div class="col-md-3 col-lg-2 col-xs-12 certificateColumn box-overlay">
+          <div class="col-md-4 col-lg-4 col-xs-12 certificateColumn box-overlay">
             <a href="https://www.coursera.org/account/accomplishments/certificate/GX2EQLCZHW84" target="_blank" class="no-effect deepLearningLink"></a>
             <img src="Images/DeepLearningAI.png" class="box-image">
 
             <p class="certificateText">Neural Networks and Deep Learning <br>GX2EQLCZHW84</p>
           </div>
 
-          <div class="col-md-3 col-lg-2 col-xs-12 certificateColumn">
+          <div class="col-md-4 col-lg-4 col-xs-12 certificateColumn">
             <img src="Images/HackathonMasters.jpg" alt="Avatar" class="box-image">
 
             <p class="certificateText">Hackathon Masters</p>
           </div>
 
-          <div class="col-md-3 col-lg-2 col-xs-12 certificateColumn">
+         <div class="col-md-4 col-lg-4 col-xs-12 certificateColumn box-overlay">
+            <a href="https://www.coursera.org/account/accomplishments/certificate/FHQ6XX2EEQ9V" target="_blank" class="no-effect deepLearningLink"></a>
+            <img src="Images/DeepLearningAI.png" class="box-image">
+
+            <p class="certificateText">Improving Deep Neural Networks: Hyperparameter Tuning, Regularization and Optimization <br>FHQ6XX2EEQ9V</p>
+          </div>
+        </div>
+
+        <div class="row publicationRow" style="height: auto; margin-top: 30px;">
+          <div class="col-md-4 col-lg-4 col-xs-12 certificateColumn">
             <img src="Images/Word.png" alt="Avatar" class="box-image">
 
             <p class="certificateText">Microsoft Office Specialist Word</p>
           </div>
 
-          <div class="col-md-3 col-lg-2 col-xs-12 certificateColumn">
+          <div class="col-md-4 col-lg-4 col-xs-12 certificateColumn">
             <img src="Images/Excel.png" alt="Avatar" class="box-image">
             
             <p class="certificateText">Microsoft Office Specialist Excel</p>
           </div>
 
-          <div class="col-md-3 col-lg-2 col-xs-12 certificateColumn">
+          <div class="col-md-4 col-lg-4 col-xs-12 certificateColumn">
             <img src="Images/PowerPoint.png" alt="Avatar" class="box-image">
             
             <p class="certificateText">Microsoft Office Specsialist PowerPoint</p>
@@ -539,9 +568,9 @@
         <h1 class="titleProject publicationTitle">Publication</h1>
 
         <div class="row publicationRow">
-          <div class="col-md-12 col-xs-12 box-overlay publicationBox">
+          <div class="col-md-4 col-lg-4 col-xs-12 certificateColumn">
             <a href="https://medium.com/guide-to-integrate-sentry/guide-sentry-integration-with-unreal-engine-4-58a0fb2ea9c6" target="_blank" class="no-effect sentryLink"></a>
-            <img src="Images/SentryPublication.png" class="box-image">
+            <img src="Images/SentryPublication.png" class="box-image sentryBoxImage">
 
             <p class="publicationText">Guide — Sentry Integration with Unreal Engine 4</p>
           </div>
@@ -582,7 +611,7 @@
 
           <div class="skillset">
 
-              <div class="col-sm-12 col-lg-6 skillsetColumn">
+              <div class="col-sm-12 skillsetColumn">
                 <div class="skills">
                   <div class="skill">
                     <h4 class="skill-title">Machine Learning</h4>
