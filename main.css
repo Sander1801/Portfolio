@@ -1890,6 +1890,18 @@ transform: rotate(60deg);
 	{
 		font-size: 10!important;
 	}
+
+	.circular-menu.circular-menu-left.active .menu-item:nth-child(1) {
+	  transform: translate3d(0.65em,-2.4em,0);
+	}
+
+	.circular-menu.circular-menu-left.active .menu-item:nth-child(2) {
+	  transform: translate3d(2.8em,-3.1em,0);
+	}
+
+	.circular-menu.circular-menu-left.active .menu-item:nth-child(3) {
+	  transform: translate3d(3.5em,-0.4em,0);
+	}
 }
 
 @media screen and (min-width: 1201px)
