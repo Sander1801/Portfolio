@@ -1829,14 +1829,6 @@ transform: rotate(60deg);
 	}
 }
 
-@media screen and (max-width: 450px)
-{
-	.jobLocationAndTime
-	{
-		margin-left: 20px;
-	}
-}
-
 @media screen and (max-width: 729px)
 {
 	.jobMainDiv
@@ -1868,6 +1860,15 @@ transform: rotate(60deg);
 	.jobImageLine, .educationImageLine
 	{
 		display: none;
+	}
+}
+
+
+@media screen and (max-width: 450px)
+{
+	.jobLocationAndTime
+	{
+		margin-left: 20px;
 	}
 }
 
