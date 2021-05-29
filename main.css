@@ -1798,11 +1798,6 @@ transform: rotate(60deg);
 	{
 		margin-top: 0px;
 	}
-
-	.certificateColumn
-	{
-		margin-bottom: 20px;
-	}
 }
 
 @media screen and (max-width: 835px)
