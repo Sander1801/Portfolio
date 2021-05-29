@@ -1870,6 +1870,26 @@ transform: rotate(60deg);
 	{
 		margin-left: 15px;
 	}
+
+	.aboutTitle
+	{
+		font-size: 15;
+	}
+
+	.aboutName
+	{
+		font-size: 27;
+	}
+
+	.aboutDescription
+	{
+		font-size: 13;
+	}
+
+	.skill-title
+	{
+		font-size: 10;
+	}
 }
 
 @media screen and (min-width: 1201px)
