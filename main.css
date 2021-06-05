@@ -767,7 +767,7 @@ images
 .jobLocation
 {
 	margin-bottom: 2px;
-	padding-right: 20px!important;
+	padding-right: 5px!important;
 	float: left;
 }
 
@@ -1835,7 +1835,8 @@ transform: rotate(60deg);
 	.jobMainDiv
 	{
 		display: block;
-		margin-top: 40px;
+   	 	margin-top: 20px;
+    		margin-bottom: 40px;
 	}
 
 	.jobCircleImage
@@ -1937,7 +1938,22 @@ transform: rotate(60deg);
 {
 	.titleProject, .titleProjectWhite
 	{
-		margin-top: 140px;
+		margin-top: 125px;
+	}
+
+	.publishInformation
+	{
+		bottom: 20px;
+	}
+
+	.readMore
+	{
+		margin-bottom: 25px;
+	}
+
+	.projectDescription
+	{
+		max-width: 56%;
 	}
 }
 
@@ -1951,6 +1967,11 @@ transform: rotate(60deg);
 	.paddingLeftProject
 	{
 		padding-left: 25px;
+	}
+
+	.jobLocation 
+	{
+	    padding-right: 20px!important;
 	}
 }
 

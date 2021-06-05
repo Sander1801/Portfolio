@@ -1,3 +1,5 @@
+var currentPage = "projects";
+
 $(document).ready(function()
 {
   var blackMenuColor = false;
@@ -64,7 +66,7 @@ $(document).ready(function()
 		$(this).addClass("active");
 
 		// Get the name of the page we should display.
-		const newPageName = $(this).attr("data-page");
+		currentPage = $(this).attr("data-page");
 		const slideDuration = 600;
 
 		// Slide a div before the selected page will be displayed.
@@ -75,7 +77,7 @@ $(document).ready(function()
   		$('*.page').hide();
 
   		// Display the selected page.
-	    $(newPageName).show();
+	    $(currentPage).show();
 
 	    // Slide the 'pageswitcher' away from the screen.
 	    $("pageswitcher").animate({ left: "-100%" }, slideDuration, function()
@@ -83,7 +85,7 @@ $(document).ready(function()
     		// Set the 'pageswitcher' back to the begin position.
     		$("pageswitcher").css("left", "100%");
 
-        if (newPageName == "about")
+        if (currentPage == "about")
         {
           $(".skillsetOpenBar").css("animation", "skillsetButtonAnimation 3s");
         }
@@ -92,7 +94,9 @@ $(document).ready(function()
 
   	setTimeout(function()
   	{ 
-	  	if (newPageName == "projects") 
+      const win = $(this);
+
+	  	if (currentPage == "projects" && win.width() >= 992) 
 	  	{
 	    	$('verticalLineLeft').show();
 	    	$('verticalLineRight').show();
@@ -103,7 +107,7 @@ $(document).ready(function()
 				$('verticalLineRight').hide();
 			}
 
-			if (newPageName == "jobs" || newPageName == "certificates") 
+			if (currentPage == "jobs" || currentPage == "certificates") 
 	  	{
 	  		$(".titleName").css("color", "black");
 	  		$(".nav-link").css("color", "black");
@@ -241,7 +245,11 @@ function SetProjectsLayout()
   {
     $(".projectsSmallScreen").hide();
     $(".projectsBigScreen").show();
-    $("verticalLineLeft").show();
-    $("verticallineRight").show();
+
+    if (currentPage == "projects")
+    {
+      $("verticalLineLeft").show();
+      $("verticallineRight").show();
+    }
   }
 }
