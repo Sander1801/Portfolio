@@ -18,6 +18,13 @@ $(document).ready(function()
       })
   })
 
+  SetProjectsLayout();
+
+  $(window).on('resize', function()
+  {
+    SetProjectsLayout();
+  });
+
   $(".navbar-toggler").click(function()
   {
     if ($(this).hasClass("collapsed") && blackMenuColor) 
@@ -47,76 +54,76 @@ $(document).ready(function()
 		if ($(this).hasClass("active")) return false;
 	});
 
-  	$('ul#menu li a').click(function()
-  	{ 
-  		// The selected menu item is already active.
-  		if ($(this).hasClass("active")) return
+	$('ul#menu li a').click(function()
+	{ 
+		// The selected menu item is already active.
+		if ($(this).hasClass("active")) return
 
-  		// Remove 'active' and add it to the selected menu item.
-  		$('#menu li a').removeClass("active");
-  		$(this).addClass("active");
+		// Remove 'active' and add it to the selected menu item.
+		$('#menu li a').removeClass("active");
+		$(this).addClass("active");
 
-  		// Get the name of the page we should display.
-  		const newPageName = $(this).attr("data-page");
-  		const slideDuration = 600;
+		// Get the name of the page we should display.
+		const newPageName = $(this).attr("data-page");
+		const slideDuration = 600;
 
-  		// Slide a div before the selected page will be displayed.
-		  $("pageswitcher").animate({ left: "0" }, slideDuration, function() 
-	  	{
-	  		// Hide all page classes.
-	  		// Could be optimized by doing it once and storing the elements.
-	  		$('*.page').hide();
+		// Slide a div before the selected page will be displayed.
+	  $("pageswitcher").animate({ left: "0" }, slideDuration, function() 
+  	{
+  		// Hide all page classes.
+  		// Could be optimized by doing it once and storing the elements.
+  		$('*.page').hide();
 
-	  		// Display the selected page.
-		    $(newPageName).show();
+  		// Display the selected page.
+	    $(newPageName).show();
 
-		    // Slide the 'pageswitcher' away from the screen.
-		    $("pageswitcher").animate({ left: "-100%" }, slideDuration, function()
-	    	{
-	    		// Set the 'pageswitcher' back to the begin position.
-	    		$("pageswitcher").css("left", "100%");
+	    // Slide the 'pageswitcher' away from the screen.
+	    $("pageswitcher").animate({ left: "-100%" }, slideDuration, function()
+    	{
+    		// Set the 'pageswitcher' back to the begin position.
+    		$("pageswitcher").css("left", "100%");
 
-          if (newPageName == "about")
-          {
-            $(".skillsetOpenBar").css("animation", "skillsetButtonAnimation 3s");
-          }
-	    	});
-	  	});
-
-	  	setTimeout(function()
-	  	{ 
-		  	if (newPageName == "projects") 
-		  	{
-		    	$('verticalLineLeft').show();
-		    	$('verticalLineRight').show();
-  			}
-  			else
-  			{
-  				$('verticalLineLeft').hide();
-  				$('verticalLineRight').hide();
-  			}
-
-  			if (newPageName == "jobs" || newPageName == "certificates") 
-		  	{
-		  		$(".titleName").css("color", "black");
-		  		$(".nav-link").css("color", "black");
-          $(".navbar-toggler").css("border-color", "black");
-          $(".navbar-toggler-icon").addClass("navbar-toggler-icon-black");
-          $(".navbar-toggler-icon").removeClass("navbar-toggler-icon-white");
-
-		  		$(".jobRow").trigger("focus");
-          blackMenuColor = true;
-		  	}
-		  	else
-		  	{
-		  		$(".titleName").css("color", "white");
-		  		$(".nav-link").css("color", "white");
-          $(".navbar-toggler").css("border-color", "white");
-          $(".navbar-toggler-icon").removeClass("navbar-toggler-icon-black");
-          $(".navbar-toggler-icon").addClass("navbar-toggler-icon-white");
-		  	}
-	  	}, slideDuration / 1);
+        if (newPageName == "about")
+        {
+          $(".skillsetOpenBar").css("animation", "skillsetButtonAnimation 3s");
+        }
+    	});
   	});
+
+  	setTimeout(function()
+  	{ 
+	  	if (newPageName == "projects") 
+	  	{
+	    	$('verticalLineLeft').show();
+	    	$('verticalLineRight').show();
+			}
+			else
+			{
+				$('verticalLineLeft').hide();
+				$('verticalLineRight').hide();
+			}
+
+			if (newPageName == "jobs" || newPageName == "certificates") 
+	  	{
+	  		$(".titleName").css("color", "black");
+	  		$(".nav-link").css("color", "black");
+        $(".navbar-toggler").css("border-color", "black");
+        $(".navbar-toggler-icon").addClass("navbar-toggler-icon-black");
+        $(".navbar-toggler-icon").removeClass("navbar-toggler-icon-white");
+
+	  		$(".jobRow").trigger("focus");
+        blackMenuColor = true;
+	  	}
+	  	else
+	  	{
+	  		$(".titleName").css("color", "white");
+	  		$(".nav-link").css("color", "white");
+        $(".navbar-toggler").css("border-color", "white");
+        $(".navbar-toggler-icon").removeClass("navbar-toggler-icon-black");
+        $(".navbar-toggler-icon").addClass("navbar-toggler-icon-white");
+	  	}
+  	}, slideDuration / 1);
+	});
 
 	$('ul#projectsList li').click(function()
   {
@@ -218,3 +225,23 @@ $(document).ready(function()
   		$('.skillsetOpenBar').animate({ right: (skillsetOpen) ? responsivePercentage : "0%" }, slideDuration, function() { });
   	});
 });
+
+function SetProjectsLayout()
+{
+  const win = $(this);
+
+  if (win.width() < 992) 
+  {
+    $(".projectsSmallScreen").show();
+    $(".projectsBigScreen").hide();
+    $("verticalLineLeft").hide();
+    $("verticallineRight").hide();
+  }
+  else
+  {
+    $(".projectsSmallScreen").hide();
+    $(".projectsBigScreen").show();
+    $("verticalLineLeft").show();
+    $("verticallineRight").show();
+  }
+}

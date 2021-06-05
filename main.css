@@ -317,7 +317,7 @@ h6
 	position: absolute;
   	top: 300px;
  	border-left: 2px solid #e4e4e4;
-  	margin-left: 264px;
+  	margin-left: 263px;
   	height: 200px;
   	z-index: 0;
 }
@@ -760,14 +760,14 @@ images
 .jobLocationAndTime
 {
 	min-width: 180px; 
-	max-width: 190px;
+	max-width: 180px;
 	margin-top: 20px;
 }
 
 .jobLocation
 {
 	margin-bottom: 2px;
-	padding-right: 13px!important;
+	padding-right: 20px!important;
 	float: left;
 }
 
@@ -802,6 +802,11 @@ images
 .trailerDiv, .featuresDiv
 {
 	margin-top: 30px;
+}
+
+.paddingLeftProject
+{
+	padding-left: 50px;
 }
 
 .popup 
@@ -1925,6 +1930,35 @@ transform: rotate(60deg);
 	{
 		padding-left: 70px;
 		padding-right: 70px;
+	}
+}
+
+@media screen and (max-width: 430px)
+{
+	.titleProject, .titleProjectWhite
+	{
+		margin-top: 140px;
+	}
+}
+
+@media screen and (max-width: 600px)
+{
+	ul#projectsList, .readMore
+	{
+		right: 35px;
+	}
+
+	.paddingLeftProject
+	{
+		padding-left: 25px;
+	}
+}
+
+@media screen and (max-width: 991px)
+{
+	.backgroundLeft
+	{
+		width: 100%;
 	}
 }
 
