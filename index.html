@@ -11,7 +11,7 @@
     <link href="bootstrap.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <link href="main.css" rel="stylesheet">
-    <link href="" rel="shortcut icon">
+    <link href="Images/LogoAI.png" rel="shortcut icon">
     <!-- Title -->
     <title>Sander Lemmen - Portfolio</title>
   </head>
@@ -94,6 +94,10 @@
                   The website is developed with the following programming and markup languages: PHP, jQuery, HTML, CSS, and Bootstrap. 
                   <br>A relational database management system is used to store data. As a software design pattern, I use a model-view-controller.
                 </h2>
+
+                <div class="projectDescriptionText">
+                  <a href="https://cutsnfades.nl" target="_blank" style="font-family: 'Graphik', 'Arial', sans-serif; font-size: 14;">Open website</a>
+                </div>
               </div>
             </div>
           </div>
@@ -355,22 +359,65 @@
 
               <div class="projectDescription">
                 <h2 class="projectDescriptionText">
-                  The goal was to build a CPU ray tracer in C++ and mimic two references. Ray tracing is simply a rendering technique that can produce realistic light effects.
+                  The goal was to build a CPU ray tracer from scratch in C++ and mimic two references. Ray tracing is simply a rendering technique that can produce realistic light effects.
                 </h2>
                 <h2 class="projectDescriptionText">
-                  For this project, I used all kinds of techniques and algorithms such as BVH, soft shadow, refraction, and the like.
+                  For this project, I used all kinds of techniques and algorithms such as BVH, multithreading, JSON, inverse matrix, soft shadow, ambient occlusion, hollow sphere, refraction, and the like.
                 </h2>
               </div>
 
               <div class="readMore">
-                <a href="#popup1">Read more...</a>
+                <a href="#popupRayTracerBig">Read more...</a>
               </div>
             </div>
 
-            <div id="popup1" class="popup">
+            <div id="popupRayTracerBig" class="popup">
               <a href="#" class="close">&times;</a>
-              <h2>Last Resort</h2>
-              <p>Additional information...</p>
+              <h2>Ray Tracer</h2>
+
+              <div class="projectDetailsDiv">
+                <p>As described on the main page, we had to make a ray tracer from scratch in C++. In addition, we also had to create our own vector and matrix class. Before I started programming, I analyzed the Turner Whitted reference photo (the first photo we had to remake) and researched all kinds of techniques, algorithms, and the like.
+                In the end, I remade both reference photos (Turner Whitted and a circle of boxes, see main page) and applied all kinds of extra features, such as soft shadow, ambient occlusion, hollow sphere, multithreading, et cetera.</p>
+
+                <p>Vectors and matrices are widely used in game development, and by creating your own class, you actually learn the basics of game development/mathematics, such as the dot product, cross product, inverse, transpose, and the like.</p>
+
+                <p>For example, to calculate the inverse of a matrix, I applied three methods:</p>
+                <p>1. Hardcoded the computation (four by four matrix).</p>
+                <p>2. Analytical solution.</p>
+                <p>3. Gauss Jordan algorithm.</p>
+
+                <p>We had to create our own unit tests to ensure that certain algorithms work:</p>
+
+                <img src="Images/RayTracerDetails/UnitTests.png" class="readMoreImageBig" />
+
+                <p>To make the program faster, I researched acceleration data structures, multithreading, and cache coherence. And, of course, I applied them. Unfortunately, I didn't have time for SIMD.</p>
+
+                <p>I chose to apply a bounding volume hierarchy as it is one of the better methods. Ideally, I wanted to implement a k-dimensional tree, but due to lack of time, I couldn't. When making all these techniques, it is also crucial to understand the Big O Notation. The render and build complexity has therefore also been taken into consideration.</p>
+
+                <p>A scene that renders many boxes using multithreading and the bounding volume hierarchy technique. You can also see that JSON is applied:</p>
+                <img src="Images/RayTracerDetails/JSONAndBVH.png" class="readMoreImageBig" />
+
+                <p>A JSON script for the second reference image (circle of boxes, see the second image on the main page)</p>
+                <pre style="width: 50%"><code id=rayTracerJSONBig></code></pre>
+
+                <p>Ambient occlusion with gamma:</p>
+                <img src="Images/RayTracerDetails/AmbientOcclusionWithGamma.png" class="readMoreImageBig" />
+
+                <p>Ambient occlusion without gamma:</p>
+                <img src="Images/RayTracerDetails/AmbientOcclusionWithoutGamma.png" class="readMoreImageBig" />
+                
+                <p>A box with checkboard pattern:</p>
+                <img src="Images/RayTracerDetails/Checkboard1.png" class="readMoreImageBig" />
+
+                <p>A box with checkboard pattern and different lighting:</p>
+                <img src="Images/RayTracerDetails/Checkboard2.png" class="readMoreImageBig" />
+
+                <p>A triangle:</p>
+                <img src="Images/RayTracerDetails/Triangle.png" class="readMoreImageBig" />
+
+                <p>Soft shadow:</p>
+                <img src="Images/RayTracerDetails/SoftShadow.png" class="readMoreImageBig" />
+              </div>
             </div>
             <a href="#" class="close-popup"></a>
           </div>
@@ -395,6 +442,10 @@
                   The website is developed with the following programming and markup languages: PHP, jQuery, HTML, CSS, and Bootstrap. 
                   <br>A relational database management system is used to store data. As a software design pattern, I use a model-view-controller.
                 </h2>
+
+                <div class="projectDescriptionText">
+                  <a href="https://cutsnfades.nl" target="_blank" style="font-family: 'Graphik', 'Arial', sans-serif; font-size: 14;">Open website</a>
+                </div>
               </div>
             </div>
           </div>
@@ -454,7 +505,7 @@
         </lastResort>
 
         <fairyTale class="row" style="background-image: url('Images/FairytaleBackground.png')">
-          <div class="col-sm-12">
+          <div class="col-sm-12 paddingLeftProject">
             <div class="projectInformation">
               <h1 class="titleProjectWhite">Fairytale Fix-Up</h1>
 
@@ -498,7 +549,7 @@
               <div class="trailerDiv">
                 <h4>Trailer</h4>
 
-                <iframe style="width: 100%;" sheight="315" src="https://www.youtube.com/embed/FqNHop80wUo" title="Fairytale Fix-Up" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+                <iframe style="width: 100%;" sheight="385" src="https://www.youtube.com/embed/FqNHop80wUo" title="Fairytale Fix-Up" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
                 </iframe>
               </div>
 
@@ -520,14 +571,14 @@
         </fairyTale>
 
         <bongoBeater class="row">
-          <div class="col-sm-12" style="color: white;">
+          <div class="col-sm-12 paddingLeftProject" style="color: white;">
             <images>
               <div class="backgroundLeft" style="background-color: black;">
                 <img class="imageBackground" style="opacity: 0.4;" src="Images/BongoBeater.png" />
               </div>
             </images>
 
-            <div class="projectInformation">
+            <div class="projectInformation" style="width: 100%; padding-right: 50;">
               <h1 class="titleProjectWhite">Bongo Beater - Demo</h1>
 
               <div style="display: inline-block; width: 100%">
@@ -562,7 +613,7 @@
                 <img src="Images/Itch-io.png"  style="height: 60px; margin-bottom: -10px;"/>
               </div>
 
-              <div class="readMore">
+              <div class="readMore" style="right: 110px;">
                 <a href="#popupBongoBeaterSmall">Read more...</a>
               </div>
             </div>
@@ -577,7 +628,7 @@
         </bongoBeater>
 
         <raytracer id="raytracer" class="row">
-          <div class="col-sm-12" style="color: white;">
+          <div class="col-sm-12 paddingLeftProject" style="color: white;">
             <div style="height: 100%;
                 width: 100%;
                 left: 0px;
@@ -608,10 +659,10 @@
 
               <div class="projectDescription">
                 <h2 class="projectDescriptionText">
-                  The goal was to build a CPU ray tracer in C++ and mimic two references. Ray tracing is simply a rendering technique that can produce realistic light effects.
+                  The goal was to build a CPU ray tracer from scratch in C++ and mimic two references. Ray tracing is simply a rendering technique that can produce realistic light effects.
                 </h2>
                 <h2 class="projectDescriptionText">
-                  For this project, I used all kinds of techniques and algorithms such as BVH, soft shadow, refraction, and the like.
+                  For this project, I used all kinds of techniques and algorithms such as BVH, multithreading, JSON, inverse matrix, soft shadow, ambient occlusion, hollow sphere, refraction, and the like.
                 </h2>
               </div>
 
@@ -622,8 +673,51 @@
 
             <div id="popupRayTracerSmall" class="popup">
               <a href="#" class="close">&times;</a>
-              <h2>Last Resort</h2>
-              <p>Additional information...</p>
+              <h2>Ray Tracer</h2>
+
+              <div class="projectDetailsDiv">
+                <p>As described on the main page, we had to make a ray tracer from scratch in C++. In addition, we also had to create our own vector and matrix class. Before I started programming, I analyzed the Turner Whitted reference photo (the first photo we had to remake) and researched all kinds of techniques, algorithms, and the like.
+                In the end, I remade both reference photos (Turner Whitted and a circle of boxes, see main page) and applied all kinds of extra features, such as soft shadow, ambient occlusion, hollow sphere, multithreading, et cetera.</p>
+
+                <p>Vectors and matrices are widely used in game development, and by creating your own class, you actually learn the basics of game development/mathematics, such as the dot product, cross product, inverse, transpose, and the like.</p>
+
+                <p>For example, to calculate the inverse of a matrix, I applied three methods:</p>
+                <p>1. Hardcoded the computation (four by four matrix).</p>
+                <p>2. Analytical solution.</p>
+                <p>3. Gauss Jordan algorithm.</p>
+
+                <p>We had to create our own unit tests to ensure that certain algorithms work:</p>
+
+                <img src="Images/RayTracerDetails/UnitTests.png" class="readMoreImage" />
+
+                <p>To make the program faster, I researched acceleration data structures, multithreading, and cache coherence. And, of course, I applied them. Unfortunately, I didn't have time for SIMD.</p>
+
+                <p>I chose to apply a bounding volume hierarchy as it is one of the better methods. Ideally, I wanted to implement a k-dimensional tree, but due to lack of time, I couldn't. When making all these techniques, it is also crucial to understand the Big O Notation. The render and build complexity has therefore also been taken into consideration.</p>
+
+                <p>A scene that renders many boxes using multithreading and the bounding volume hierarchy technique. You can also see that JSON is applied:</p>
+                <img src="Images/RayTracerDetails/JSONAndBVH.png" class="readMoreImage" />
+
+                <p>A JSON script for the second reference image (circle of boxes, see the second image on the main page)</p>
+                <pre><code id=rayTracerJSON></code></pre>
+
+                <p>Ambient occlusion with gamma:</p>
+                <img src="Images/RayTracerDetails/AmbientOcclusionWithGamma.png" class="readMoreImage" />
+
+                <p>Ambient occlusion without gamma:</p>
+                <img src="Images/RayTracerDetails/AmbientOcclusionWithoutGamma.png" class="readMoreImage" />
+                
+                <p>A box with checkboard pattern:</p>
+                <img src="Images/RayTracerDetails/Checkboard1.png" class="readMoreImage" />
+
+                <p>A box with checkboard pattern and different lighting:</p>
+                <img src="Images/RayTracerDetails/Checkboard2.png" class="readMoreImage" />
+
+                <p>A triangle:</p>
+                <img src="Images/RayTracerDetails/Triangle.png" class="readMoreImage" />
+
+                <p>Soft shadow:</p>
+                <img src="Images/RayTracerDetails/SoftShadow.png" class="readMoreImage" />
+              </div>
             </div>
             <a href="#" class="close-popup"></a>
           </div>

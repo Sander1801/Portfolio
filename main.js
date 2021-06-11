@@ -228,6 +228,10 @@ $(document).ready(function()
 
   		$('.skillsetOpenBar').animate({ right: (skillsetOpen) ? responsivePercentage : "0%" }, slideDuration, function() { });
   	});
+
+    var rayTracerJSON = {"WindowDimension":{"Width":800,"Height":750},"CameraPosition":{"X":0,"Y":-450,"Z":-1000},"Depth":3,"Multithreading":{"Threads":4,"TotalTasks":150},"Shapes":[{"Type":"Plane","Normal":{"X":0,"Y":1,"Z":0},"Position":{"X":0,"Y":0,"Z":0},"Material":{"Type":"Phong","Color":{"R":0.7,"G":0.7,"B":0.7},"Diffuse":0.8,"Specular":1,"Shininess":64}},{"Type":"Sphere","Radius":50,"Position":{"X":0,"Y":-50,"Z":0},"Material":{"Type":"Reflective","Color":{"R":0.7,"G":0.7,"B":0.7},"Diffuse":1,"Specular":0.6,"Shininess":128,"Reflective":0.2}}],"Lights":[{"Type":"Ambient","Color":{"R":1,"G":1,"B":1},"Intensity":0.2,"Sampler":{"Sets":30,"Samples":30}},{"Type":"Area","Color":{"R":1,"G":1,"B":1},"Position":{"X":200,"Y":-550,"Z":-55},"Scale":{"X":40,"Y":40,"Z":40},"Attenuation":{"Constant":1,"Linear":0.00014,"Quadratic":7e-7},"Intensity":1,"Sampler":{"Sets":30,"Samples":30}}],"GenerateSphereSurroundedScene":{"TotalCircles":13,"TotalShapesPerCircle":11,"OffsetFromSphere":180,"OffsetRadiusX":80,"OffsetRadiusZ":100,"StartPosition":{"X":0,"Y":-55,"Z":0},"Scale":{"MinX":60,"MaxX":80,"MinY":95,"MaxY":135,"MinZ":60,"MaxZ":80},"Rotation":{"MinX":-0.5,"MaxX":0.5,"MinY":-0.6,"MaxY":0.4,"MinZ":-0.3,"MaxZ":0.7},"Material":{"Type":"Matte","Color":{"MinR":0.1,"MaxR":0.6,"MinG":0.1,"MaxG":0.6,"MinB":0.01,"MaxB":0.8},"Diffuse":0.8}},"BackgroundColor":{"R":0.49,"G":0.49,"B":0.49}};
+    document.getElementById('rayTracerJSON').innerHTML = prettyPrint(rayTracerJSON);
+    document.getElementById('rayTracerJSONBig').innerHTML = prettyPrint(rayTracerJSON);
 });
 
 function SetProjectsLayout()
@@ -252,4 +256,32 @@ function SetProjectsLayout()
       $("verticallineRight").show();
     }
   }
+}
+
+/**
+ * Pretty Print JSON Objects.
+ * Inspired by http://jsfiddle.net/unLSJ/
+ *
+ * @return {string}    html string of the formatted JS object
+ * @example:  var obj = {"foo":"bar"};  prettyPrint(obj);
+ */
+function prettyPrint(value)
+{
+    var jsonLine = /^( *)("[\w]+": )?("[^"]*"|[\w.+-]*)?([,[{])?$/mg;
+    var replacer = function(match, pIndent, pKey, pVal, pEnd) {
+        var key = '<span class="json-key" style="color: brown">',
+            val = '<span class="json-value" style="color: navy">',
+            str = '<span class="json-string" style="color: olive">',
+            r = pIndent || '';
+        if (pKey)
+            r = r + key + pKey.replace(/[": ]/g, '') + '</span>: ';
+        if (pVal)
+            r = r + (pVal[0] == '"' ? str : val) + pVal + '</span>';
+        return r + (pEnd || '');
+    };
+
+    return JSON.stringify(value, null, 3)
+               .replace(/&/g, '&amp;').replace(/\\"/g, '&quot;')
+               .replace(/</g, '&lt;').replace(/>/g, '&gt;')
+               .replace(jsonLine, replacer);
 }

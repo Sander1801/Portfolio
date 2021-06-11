@@ -799,7 +799,7 @@ images
     	padding-top: 1px;
 }
 
-.trailerDiv, .featuresDiv
+.trailerDiv, .featuresDiv, .projectDetailsDiv
 {
 	margin-top: 30px;
 }
@@ -807,6 +807,30 @@ images
 .paddingLeftProject
 {
 	padding-left: 50px;
+}
+
+pre 
+{
+	background-color: ghostwhite;
+	border: 1px solid silver;
+	padding: 10px 20px;
+	border-radius: 4px;
+  	width: 100%;
+}
+
+.readMoreImage, .readMoreImageBig
+{
+	margin-bottom: 16px;
+}
+
+.readMoreImage
+{
+	width: 100%;
+}
+
+.readMoreImageBig
+{
+	width: 50%;
 }
 
 .popup 
@@ -818,6 +842,7 @@ images
 	border-radius: 10px;
 	top: 50%;
 	left: 50%;
+	color: black;
 	transform: translate(-50%,-50%);
 	background: rgba(255,255,255,.9);
 	visibility: hidden;
@@ -854,9 +879,9 @@ images
 
 .popup .close 
 {
-	position: absolute;
-	right: 5px;
-	top: 5px;
+	position: sticky;
+	float: right;
+	top: 0;
 	padding: 5px;
 	color: #000;
 	transition: color .3s;
