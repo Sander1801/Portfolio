@@ -1936,7 +1936,7 @@ transform: rotate(60deg);
 
 @media screen and (max-width: 430px)
 {
-	.titleProject, .titleProjectWhite
+	.titleProject:not(.publicationTitle), .titleProjectWhite:not(.publicationTitle)
 	{
 		margin-top: 140px;
 	}
