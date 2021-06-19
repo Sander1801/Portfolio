@@ -275,7 +275,7 @@ h6
 	font-family: 'Dosis', sans-serif;
     	text-transform: uppercase;
     	font-weight: 400;
-    	font-size: 31;
+    	font-size: 29;
     	letter-spacing: 10px;
 	margin-top: 170px;
 	margin-bottom: 20px;
@@ -598,11 +598,11 @@ ul#projectsList li
 ul#projectsList li.active, ul.projectImagesList li.active
 {
     	color: #bf482c;
-    	font-size: 17px;
+    	font-size: 16px;
     	opacity: 1;
 }
 
-machineLearning
+outfitComposition
 {
 	top: 0%;
     	position: absolute;
@@ -610,7 +610,7 @@ machineLearning
     	margin-left: 0px!important;
 }
 
-cutsNFades
+numberRecognition
 {
 	top: 100%;
     	position: absolute;
@@ -618,9 +618,17 @@ cutsNFades
     	margin-left: 0px!important;
 }
 
-lastResort
+cutsNFades
 {
 	top: 200%;
+    	position: absolute;
+    	width: 100%; 
+    	margin-left: 0px!important;
+}
+
+lastResort
+{
+	top: 300%;
 	position: absolute;
     	width: 100%; 
     	margin-left: 0px!important;
@@ -628,7 +636,7 @@ lastResort
 
 fairyTale
 {
-	top: 300%;
+	top: 400%;
     	position: absolute;
     	width: 100%; 
     	margin-left: 0px!important;
@@ -636,7 +644,7 @@ fairyTale
 
 bongoBeater
 {
-	top: 400%;
+	top: 500%;
 	position: absolute;
     	width: 100%; 
     	margin-left: 0px!important;
@@ -644,7 +652,7 @@ bongoBeater
 
 raytracer
 {
-	top: 500%;
+	top: 600%;
 	position: absolute;
     	width: 100%; 
     	margin-left: 0px!important;
