@@ -610,7 +610,7 @@ outfitComposition
     	margin-left: 0px!important;
 }
 
-numberRecognition
+cutsNFades
 {
 	top: 100%;
     	position: absolute;
@@ -618,7 +618,7 @@ numberRecognition
     	margin-left: 0px!important;
 }
 
-cutsNFades
+numberRecognition
 {
 	top: 200%;
     	position: absolute;
@@ -1965,6 +1965,22 @@ transform: rotate(60deg);
 		padding-left: 70px;
 		padding-right: 70px;
 	}
+
+	.MNISTBackground
+	{
+		height: 45%; 
+		width: 50%;
+	}
+}
+
+@media screen and (max-width: 1249px)
+{
+	.MNISTBackground
+	{
+		height: 35%; 
+		width: 70%;
+		padding-left: 5px;
+	}
 }
 
 @media screen and (max-width: 430px)
@@ -1994,7 +2010,7 @@ transform: rotate(60deg);
 {
 	ul#projectsList, .readMore
 	{
-		right: 35px;
+		right: 25px;
 	}
 
 	.paddingLeftProject

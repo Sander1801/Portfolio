@@ -66,8 +66,8 @@
     <projects class="page" style="top: -100%;">
       <ul id="projectsList">
         <li data-id="0"><strike>Outfit Composition</strike></li>
-        <li data-id="1" class="active">Number Recognition</li>
-        <li data-id="2" >Cuts 'N Fades</li>
+        <li data-id="1" class="active">Cuts 'N Fades</li>
+        <li data-id="2">Number Recognition</li>
         <li data-id="3">Last Resort</li>
         <li data-id="4">Fairytale Fix-Up</li>
         <li data-id="5">Bongo Beater</li>
@@ -96,28 +96,6 @@
           </div>
         </outfitComposition>
 
-        <numberRecognition class="row" style="background-color: black;">
-          <div class="col-sm-12 col-lg-6">
-            <img src="Images/MNISTBackground.png" style="height: 45%; width: 50%; margin-top: 166px;" />
-          </div>
-
-          <div class="col-sm-12 col-lg-6">
-            <div class="projectInformation">
-              <h1 class="titleProjectWhite">Number Recognition</h1>
-
-              <div class="projectDescription">
-                <h2 class="projectDescriptionText">
-                  Recognizing handwritten numbers was one of my first machine learning projects. The purpose of this was to learn the basics of the mathematics behind a convolutional neural network. Thanks to this project, I understand how the basics work, such as forward and backward propagation, softmax, max-pooling, padding, et cetera.
-                </h2>
-
-                <h2 class="projectDescriptionText">
-                  To train the neural network, I decided to use the MNIST dataset.
-                </h2>
-              </div>
-            </div>
-          </div>
-        </numberRecognition>
-
         <cutsNFades class="row" style="background-image: url('Images/CutsNFadesBackground.jpg'); background-size: cover; background-position: center;">
           <div class="col-sm-12 col-lg-6">
           </div>
@@ -144,25 +122,33 @@
           </div>
         </cutsNFades>
 
+        <numberRecognition class="row" style="background-color: black;">
+          <div class="col-sm-12 col-lg-6">
+            <img src="Images/MNISTBackground.png" class="MNISTBackground" style="margin-top: 166px;" />
+          </div>
+
+          <div class="col-sm-12 col-lg-6">
+            <div class="projectInformation">
+              <h1 class="titleProjectWhite">Number Recognition</h1>
+
+              <div class="projectDescription">
+                <h2 class="projectDescriptionText">
+                  Recognizing handwritten numbers was one of my first machine learning projects. The purpose of this was to learn the basics of the mathematics behind a convolutional neural network. Thanks to this project, I understand how the basics work, such as forward and backward propagation, softmax, max-pooling, padding, et cetera.
+                </h2>
+
+                <h2 class="projectDescriptionText">
+                  To train the neural network, I decided to use the MNIST dataset.
+                </h2>
+              </div>
+            </div>
+          </div>
+        </numberRecognition>
+
         <lastResort class="row">
           <div class="col-sm-12 col-lg-6" style="color: white;">
-            <ul class="projectImagesList" style="top: calc(50% - 50px);">
-              <li data-id="0" class="active">01</li>
-              <li data-id="1">02</li>
-              <li data-id="2">03</li>
-            </ul>
-
             <images>
               <div class="backgroundLeft" style="background-color: #d0cdb3;">
                 <img class="imageBackground" src="Images/LastResortOne.jpg" />
-              </div>
-
-              <div class="backgroundLeft" style="background-color: #d0cdb3; top: 100%;">
-                <img class="imageBackground" src="Images/LastResortOne.png" />
-              </div>
-
-              <div class="backgroundLeft" style="top: 200%;">
-                <img class="imageBackground" src="Images/AIBackground.jpg" />
               </div>
             </images>
           </div>
@@ -207,55 +193,78 @@
             <div id="popupLastResort" class="popup">
               <a href="#" class="close">&times;</a>
               <h2>Last Resort</h2>
-              <p>Last Resort is a school project we've been working on all year, four days a week. I mainly worked on artificial intelligence and quality assurance/management. Artificial intelligence was my main role, and quality management was a supporting role that I mainly did in the first three of the four blocks.</p>
 
-              <p>Many things went wrong in production and development in our team, but it was a learning experience with such a large team.</p>
+              <div class="trailerDiv">
+                <h4>Trailer</h4>
 
-              <p>In the first block, we started with the concept phase. During this phase, we researched all kinds of techniques, design ideas, which engine to use (Unreal Engine 4), and the like. Together with one other AI programmer, I mainly researched AI techniques, performance, optimization, tools, and the like. For QA, I made a document related to the procedures and pipelines. You can think of making a game design document, technical design document, code reviews, Perforce shelves, how to report bugs, test cases, et cetera.
-              In terms of AI, I've worked on benchmarking the AI, optimizing AI characters, wall climbing, and doing most of the research. Regarding research, I looked into AI decision-making, tactical pathfinding, overwhelming AI, movement, sensors, squad behavior, custom navigation, animation (blending and composite), kinematics, architecture (HTN and squad system), debugging & logging.</p>
+                <iframe width="560" height="315" src="https://cdn.akamai.steamstatic.com/steam/apps/256840365/movie_max_vp9.webm?t=1624549035" title="Last Resort" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+                </iframe>
+              </div>
 
-              <p>In the second block, we started with the pre-production phase. During this phase, I started with a presentation about the QA procedures and pipelines. I set up multiple things:</p>
-              <p>1. GameAnalytics.</p>
-              <p>2. Google Analytics connected with the Steam page.</p>
-              <p>3. Sentry.</p>
-              <p>4. Jenkins (including uploading to Steam).</p>
-              <p>5. A separate project for automation tests in Unreal Engine 4.</p>
-              <p>6. A list of analytics we should/want to track.</p>
-              <p>7. Custom fields in Jira for bug tracking (our team used Jira in the first two blocks, but after that, our team decided to use Monday).</p>
-              <p>8. A Python script that you can execute in Unreal Engine 4 to see if you have any blueprint error or warning.</p>
+              <div class="featuresDiv">
+                <h2>Development</h2>
 
-              <p>I worked on multiple AI systems that I wrote in C++ (including UML diagrams and a few automation tests):</p>
-              <p>1. Squad and commander system.</p>
-              <p>2. Token system.</p>
-              <p>3. Custom movement component.</p>
-              <p>4. Flocking system.</p>
-              <p>5. Custom AI controller.</p>
-              <p>6. Utility system useable in a behavior tree (unfortunately, we had to scrap the HTN planner as it took too much time for someone to develop). As you can see below, a few utility axes that are being used for targeting:</p>
-              <img src="Images/LastResortDetails/UtilityAxes.png" class="readMoreImageBig" />
-              <p>7. Use the visual logger to draw AI information.</p>
-              <p>8. Animation update rate optimization component.</p>
-              <p>9. Custom navigation grid (in-progress, but mostly completed)</p>
-              <p>&nbsp;&nbsp;&nbsp; - A* pathfinding.</p>
-              <p>&nbsp;&nbsp;&nbsp; - JSON saver and loader (saves the navigation grid when adjusting the volume in the editor and loads the grid when you start the game, meaning that end-users don't have to build a navigation grid when they start a game).</p>
-              <p>&nbsp;&nbsp;&nbsp; - Of course, the navigation grid itself. It also considers curves. Unfortunately, it doesn't support small stairs as a navigation grid isn't the best choice for that.</p>
-              <video width="560" controls>
-                <source src="Images/LastResortDetails/WallClimbing.mp4" type="video/mp4">
-              </video>
-              <br><br>
-              <p>Besides that, I made sure that people kept following the pipelines, and I did several test cases and user acceptance tests to check the quality of the product.</p>
+                <p>Last Resort is a school project we've been working on all year, four days a week. I mainly worked on artificial intelligence and quality assurance/management. Artificial intelligence was my main role, and quality management was a supporting role that I mainly did in the first three of the four blocks.</p>
 
-              <p>In the third block, we started with the production phase. During this phase, I improved Jenkins and so on. I had more meetings with the producers to give them feedback on what is relevant, but unfortunately, the product management and planning didn't go well in our team. 
-              Furthermore, I arranged a heatmap tool from a different team and figured out how to integrate it into our project. I also did more test cases and kept track of the bug list, including setting the priority of bugs.</p>
+                <p>Many things went wrong in production and development in our team, but it was a learning experience with such a large team.</p>
 
-              <p>Regarding AI, I had to improve the utility system as we didn't go for the HTN planner anymore. After that, I implemented wall climbing using the navigation grid and made the navigation grid a lot better. Unfortunately, we decided to scrap the wall-climbing feature later as we were far behind with our game, including AI. Fortunately, we got a new AI programmer that block, but it took quite some time to get him on the same level as the programmer was new to AI.</p>
-              <p>Later, I worked on AI targeting using the utility and squad system. As of last, I helped a lot with solving bugs.</p>
+                <p>In the first block, we started with the concept phase. During this phase, we researched all kinds of techniques, design ideas, which engine to use (Unreal Engine 4), and the like. Together with one other AI programmer, I mainly researched AI techniques, performance, optimization, tools, and the like. For QA, I made a document related to the procedures and pipelines. You can think of making a game design document, technical design document, code reviews, Perforce shelves, how to report bugs, test cases, et cetera.
+                In terms of AI, I've worked on benchmarking the AI, optimizing AI characters, wall climbing, and doing most of the research. Regarding research, I looked into AI decision-making, tactical pathfinding, overwhelming AI, movement, sensors, squad behavior, custom navigation, animation (blending and composite), kinematics, architecture (HTN and squad system), debugging & logging.</p>
 
-              <p>At the end of the block, we were still very behind schedule, and we had to work hard in the last block.</p>
+                <p>In the second block, we started with the pre-production phase. During this phase, I started with a presentation about the QA procedures and pipelines. I set up multiple things:</p>
+                <p>1. GameAnalytics.</p>
+                <p>2. Google Analytics connected with the Steam page.</p>
+                <p>3. Sentry.</p>
+                <p>4. Jenkins (including uploading to Steam).</p>
+                <p>5. A separate project for automation tests in Unreal Engine 4.</p>
+                <p>6. A list of analytics we should/want to track.</p>
+                <p>7. Custom fields in Jira for bug tracking (our team used Jira in the first two blocks, but after that, our team decided to use Monday).</p>
+                <p>8. A Python script that you can execute in Unreal Engine 4 to see if you have any blueprint error or warning.</p>
 
-              <p>During the last block, I decided to distance myself mostly from QA management. I still kept track of the bug list and prioritized the bugs. I also made sure that the project builds kept working (including Jenkins).
-              I mainly distanced myself from my supporting role because professionalism was hard to find in our team, and my motivation also started to decrease.</p>
+                <div class="featuresDiv"></div>
+                <p>I worked on multiple AI systems that I wrote in C++ (including UML diagrams and a few automation tests):</p>
+                <p>1. Squad and commander system.</p>
+                <p>2. Token system.</p>
+                <p>3. Custom movement component.</p>
+                <p>4. Flocking system.</p>
+                <p>5. Custom AI controller.</p>
+                <p>6. Utility system useable in a behavior tree (unfortunately, we had to scrap the HTN planner as it took too much time for someone to develop). As you can see below, a few utility axes that are being used for targeting:</p>
+                <img src="Images/LastResortDetails/UtilityAxes.png" class="readMoreImageBig" />
+                <p>7. Use the visual logger to draw AI information.</p>
+                <p>8. Animation update rate optimization component.</p>
+                <p>9. Custom navigation grid (in-progress, but mostly completed)</p>
+                <p>&nbsp;&nbsp;&nbsp; - A* pathfinding.</p>
+                <p>&nbsp;&nbsp;&nbsp; - JSON saver and loader (saves the navigation grid when adjusting the volume in the editor and loads the grid when you start the game, meaning that end-users don't have to build a navigation grid when they start a game).</p>
+                <p>&nbsp;&nbsp;&nbsp; - Of course, the navigation grid itself. It also considers curves. Unfortunately, it doesn't support small stairs as a navigation grid isn't the best choice for that.</p>
+                <video width="560" controls>
+                  <source src="Images/LastResortDetails/WallClimbing.mp4" type="video/mp4">
+                </video>
+                <br><br>
+                <p>Besides that, I made sure that people kept following the pipelines, and I did several test cases and user acceptance tests to check the quality of the product.</p>
 
-              <p>Beyond that, I've worked a lot on bug fixing, optimizing the AI ​​and navigation mesh, helping with lighting issues, and improving the AI ​​(crowd movement, better targeting and attacking, et cetera).</p>
+                <p>In the third block, we started with the production phase. During this phase, I improved Jenkins and so on. I had more meetings with the producers to give them feedback on what is relevant, but unfortunately, the product management and planning didn't go well in our team. 
+                Furthermore, I arranged a heatmap tool from a different team and figured out how to integrate it into our project. I also did more test cases and kept track of the bug list, including setting the priority of bugs.</p>
+
+                <p>Regarding AI, I had to improve the utility system as we didn't go for the HTN planner anymore. After that, I implemented wall climbing using the navigation grid and made the navigation grid a lot better. Unfortunately, we decided to scrap the wall-climbing feature later as we were far behind with our game, including AI. Fortunately, we got a new AI programmer that block, but it took some time to get him on the same level as the programmer was new to AI.</p>
+                <p>Later, I worked on AI targeting using the utility and squad system. As of last, I helped a lot with solving bugs.</p>
+
+                <p>At the end of the block, we were still very behind schedule, and we had to work hard in the last block.</p>
+
+                <p>During the last block, I decided to distance myself mostly from QA management. I still kept track of the bug list and prioritized the bugs. I also made sure that the project builds kept working on Jenkins.
+                I mainly distanced myself from my supporting role because professionalism was hard to find in our team, and my motivation also started to decrease.</p>
+
+                <p>Beyond that, I've worked a lot on bug fixing, optimizing the AI ​​and navigation mesh, helping with lighting issues, and improving the AI ​​(crowd movement, better targeting and attacking, et cetera).</p>
+              </div>
+
+              <div class="featuresDiv">
+                <h2>Code</h2>
+
+                <p>I try to keep a consistent level of quality regarding my code. I make sure to follow the style guides, write comments to clarify specific parts, apply API-friendly comments, respond to unexpected behavior, keep functions as short as possible, think about maintainability, and more.</p>
+                <p>Here are a few images of my code: </p>
+
+                <img src="Images/LastResortDetails/CleanHeaderCode.png" class="readMoreImageBig" />
+                <img src="Images/LastResortDetails/CleanCPPCode.png" class="readMoreImageBig" />
+              </div>
             </div>
             <a href="#" class="close-popup"></a>
           </div>
@@ -542,26 +551,6 @@
           </div>
         </outfitComposition>
 
-        <numberRecognition class="row" style="background-color: black;">
-          <div class="col-sm-12">
-            <div class="projectInformation">
-              <h1 class="titleProjectWhite">Number Recognition</h1>
-
-              <div class="projectDescription">
-                <h2 class="projectDescriptionText" style="padding-right: 30px;">
-                  Recognizing handwritten numbers was one of my first machine learning projects. The purpose of this was to learn the basics of the mathematics behind a convolutional neural network. Thanks to this project, I understand how the basics work, such as forward and backward propagation, softmax, max-pooling, padding, et cetera.
-                </h2>
-
-                <h2 class="projectDescriptionText" style="padding-right: 30px;">
-                  To train the neural network, I decided to use the MNIST dataset.
-                </h2>
-
-                <img src="Images/MNISTBackground.png" style="height: auto; width: 200px; margin-left: -10px;" />
-              </div>
-            </div>
-          </div>
-        </numberRecognition>
-
         <cutsNFades class="row" style="background-image: url('Images/CutsNFadesBackground.jpg'); background-size: cover; background-position: center;">
           <div class="col-sm-12 paddingLeftProject">
             <div class="projectInformation">
@@ -584,6 +573,26 @@
             </div>
           </div>
         </cutsNFades>
+
+        <numberRecognition class="row" style="background-color: black;">
+          <div class="col-sm-12">
+            <div class="projectInformation">
+              <h1 class="titleProjectWhite">Number Recognition</h1>
+
+              <div class="projectDescription">
+                <h2 class="projectDescriptionText" style="padding-right: 18px;">
+                  Recognizing handwritten numbers was one of my first machine learning projects. The purpose of this was to learn the basics of the mathematics behind a convolutional neural network. Thanks to this project, I understand how the basics work, such as forward and backward propagation, softmax, max-pooling, padding, et cetera.
+                </h2>
+
+                <h2 class="projectDescriptionText" style="padding-right: 30px;">
+                  To train the neural network, I decided to use the MNIST dataset.
+                </h2>
+
+                <img src="Images/MNISTBackgroundSmall.png" style="height: auto; width: 200px;" />
+              </div>
+            </div>
+          </div>
+        </numberRecognition>
 
         <lastResort class="row">
           <div class="col-sm-12 paddingLeftProject" style="color: white;">
@@ -632,55 +641,78 @@
             <div id="popupLastResortSmall" class="popup">
               <a href="#" class="close">&times;</a>
               <h2>Last Resort</h2>
-              <p>Last Resort is a school project we've been working on all year, four days a week. I mainly worked on artificial intelligence and quality assurance/management. Artificial intelligence was my main role, and quality management was a supporting role that I mainly did in the first three of the four blocks.</p>
 
-              <p>Many things went wrong in production and development in our team, but it was a learning experience with such a large team.</p>
+              <div class="trailerDiv">
+                <h4>Trailer</h4>
 
-              <p>In the first block, we started with the concept phase. During this phase, we researched all kinds of techniques, design ideas, which engine to use (Unreal Engine 4), and the like. Together with one other AI programmer, I mainly researched AI techniques, performance, optimization, tools, and the like. For QA, I made a document related to the procedures and pipelines. You can think of making a game design document, technical design document, code reviews, Perforce shelves, how to report bugs, test cases, et cetera.
-              In terms of AI, I've worked on benchmarking the AI, optimizing AI characters, wall climbing, and doing most of the research. Regarding research, I looked into AI decision-making, tactical pathfinding, overwhelming AI, movement, sensors, squad behavior, custom navigation, animation (blending and composite), kinematics, architecture (HTN and squad system), debugging & logging.</p>
+                <iframe style="width: 100%;" height="150" src="https://cdn.akamai.steamstatic.com/steam/apps/256840365/movie_max_vp9.webm?t=1624549035" title="Fairytale Fix-Up" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+                </iframe>
+              </div>
 
-              <p>In the second block, we started with the pre-production phase. During this phase, I started with a presentation about the QA procedures and pipelines. I set up multiple things:</p>
-              <p>1. GameAnalytics.</p>
-              <p>2. Google Analytics connected with the Steam page.</p>
-              <p>3. Sentry.</p>
-              <p>4. Jenkins (including uploading to Steam).</p>
-              <p>5. A separate project for automation tests in Unreal Engine 4.</p>
-              <p>6. A list of analytics we should/want to track.</p>
-              <p>7. Custom fields in Jira for bug tracking (our team used Jira in the first two blocks, but after that, our team decided to use Monday).</p>
-              <p>8. A Python script that you can execute in Unreal Engine 4 to see if you have any blueprint error or warning.</p>
+              <div class="featuresDiv">
+                <h2>Development</h2>
 
-              <p>I worked on multiple AI systems that I wrote in C++ (including UML diagrams and a few automation tests):</p>
-              <p>1. Squad and commander system.</p>
-              <p>2. Token system.</p>
-              <p>3. Custom movement component.</p>
-              <p>4. Flocking system.</p>
-              <p>5. Custom AI controller.</p>
-              <p>6. Utility system useable in a behavior tree (unfortunately, we had to scrap the HTN planner as it took too much time for someone to develop). As you can see below, a few utility axes that are being used for targeting:</p>
-              <img src="Images/LastResortDetails/UtilityAxes.png" class="readMoreImage" />
-              <p>7. Use the visual logger to draw AI information.</p>
-              <p>8. Animation update rate optimization component.</p>
-              <p>9. Custom navigation grid (in-progress, but mostly completed)</p>
-              <p>&nbsp;&nbsp;&nbsp; - A* pathfinding.</p>
-              <p>&nbsp;&nbsp;&nbsp; - JSON saver and loader (saves the navigation grid when adjusting the volume in the editor and loads the grid when you start the game, meaning that end-users don't have to build a navigation grid when they start a game).</p>
-              <p>&nbsp;&nbsp;&nbsp; - Of course, the navigation grid itself. It also considers curves. Unfortunately, it doesn't support small stairs as a navigation grid isn't the best choice for that.</p>
-              <video style="width: 100%;" controls>
-                <source src="Images/LastResortDetails/WallClimbing.mp4" type="video/mp4">
-              </video>
-              <br><br>
-              <p>Besides that, I made sure that people kept following the pipelines, and I did several test cases and user acceptance tests to check the quality of the product.</p>
+                <p>Last Resort is a school project we've been working on all year, four days a week. I mainly worked on artificial intelligence and quality assurance/management. Artificial intelligence was my main role, and quality management was a supporting role that I mainly did in the first three of the four blocks.</p>
 
-              <p>In the third block, we started with the production phase. During this phase, I improved Jenkins and so on. I had more meetings with the producers to give them feedback on what is relevant, but unfortunately, the product management and planning didn't go well in our team. 
-              Furthermore, I arranged a heatmap tool from a different team and figured out how to integrate it into our project. I also did more test cases and kept track of the bug list, including setting the priority of bugs.</p>
+                <p>Many things went wrong in production and development in our team, but it was a learning experience with such a large team.</p>
 
-              <p>Regarding AI, I had to improve the utility system as we didn't go for the HTN planner anymore. After that, I implemented wall climbing using the navigation grid and made the navigation grid a lot better. Unfortunately, we decided to scrap the wall-climbing feature later as we were far behind with our game, including AI. Fortunately, we got a new AI programmer that block, but it took quite some time to get him on the same level as the programmer was new to AI.</p>
-              <p>Later, I worked on AI targeting using the utility and squad system. As of last, I helped a lot with solving bugs.</p>
+                <p>In the first block, we started with the concept phase. During this phase, we researched all kinds of techniques, design ideas, which engine to use (Unreal Engine 4), and the like. Together with one other AI programmer, I mainly researched AI techniques, performance, optimization, tools, and the like. For QA, I made a document related to the procedures and pipelines. You can think of making a game design document, technical design document, code reviews, Perforce shelves, how to report bugs, test cases, et cetera.
+                In terms of AI, I've worked on benchmarking the AI, optimizing AI characters, wall climbing, and doing most of the research. Regarding research, I looked into AI decision-making, tactical pathfinding, overwhelming AI, movement, sensors, squad behavior, custom navigation, animation (blending and composite), kinematics, architecture (HTN and squad system), debugging & logging.</p>
 
-              <p>At the end of the block, we were still very behind schedule, and we had to work hard in the last block.</p>
+                <p>In the second block, we started with the pre-production phase. During this phase, I started with a presentation about the QA procedures and pipelines. I set up multiple things:</p>
+                <p>1. GameAnalytics.</p>
+                <p>2. Google Analytics connected with the Steam page.</p>
+                <p>3. Sentry.</p>
+                <p>4. Jenkins (including uploading to Steam).</p>
+                <p>5. A separate project for automation tests in Unreal Engine 4.</p>
+                <p>6. A list of analytics we should/want to track.</p>
+                <p>7. Custom fields in Jira for bug tracking (our team used Jira in the first two blocks, but after that, our team decided to use Monday).</p>
+                <p>8. A Python script that you can execute in Unreal Engine 4 to see if you have any blueprint error or warning.</p>
 
-              <p>During the last block, I decided to distance myself mostly from QA management. I still kept track of the bug list and prioritized the bugs. I also made sure that the project builds kept working (including Jenkins).
-              I mainly distanced myself from my supporting role because professionalism was hard to find in our team, and my motivation also started to decrease.</p>
+                <div class="featuresDiv"></div>
+                <p>I worked on multiple AI systems that I wrote in C++ (including UML diagrams and a few automation tests):</p>
+                <p>1. Squad and commander system.</p>
+                <p>2. Token system.</p>
+                <p>3. Custom movement component.</p>
+                <p>4. Flocking system.</p>
+                <p>5. Custom AI controller.</p>
+                <p>6. Utility system useable in a behavior tree (unfortunately, we had to scrap the HTN planner as it took too much time for someone to develop). As you can see below, a few utility axes that are being used for targeting:</p>
+                <img src="Images/LastResortDetails/UtilityAxes.png" class="readMoreImage" />
+                <p>7. Use the visual logger to draw AI information.</p>
+                <p>8. Animation update rate optimization component.</p>
+                <p>9. Custom navigation grid (in-progress, but mostly completed)</p>
+                <p>&nbsp;&nbsp;&nbsp; - A* pathfinding.</p>
+                <p>&nbsp;&nbsp;&nbsp; - JSON saver and loader (saves the navigation grid when adjusting the volume in the editor and loads the grid when you start the game, meaning that end-users don't have to build a navigation grid when they start a game).</p>
+                <p>&nbsp;&nbsp;&nbsp; - Of course, the navigation grid itself. It also considers curves. Unfortunately, it doesn't support small stairs as a navigation grid isn't the best choice for that.</p>
+                <video width="250" controls>
+                  <source src="Images/LastResortDetails/WallClimbing.mp4" type="video/mp4">
+                </video>
+                <br><br>
+                <p>Besides that, I made sure that people kept following the pipelines, and I did several test cases and user acceptance tests to check the quality of the product.</p>
 
-              <p>Beyond that, I've worked a lot on bug fixing, optimizing the AI ​​and navigation mesh, helping with lighting issues, and improving the AI ​​(crowd movement, better targeting and attacking, et cetera).</p>
+                <p>In the third block, we started with the production phase. During this phase, I improved Jenkins and so on. I had more meetings with the producers to give them feedback on what is relevant, but unfortunately, the product management and planning didn't go well in our team. 
+                Furthermore, I arranged a heatmap tool from a different team and figured out how to integrate it into our project. I also did more test cases and kept track of the bug list, including setting the priority of bugs.</p>
+
+                <p>Regarding AI, I had to improve the utility system as we didn't go for the HTN planner anymore. After that, I implemented wall climbing using the navigation grid and made the navigation grid a lot better. Unfortunately, we decided to scrap the wall-climbing feature later as we were far behind with our game, including AI. Fortunately, we got a new AI programmer that block, but it took some time to get him on the same level as the programmer was new to AI.</p>
+                <p>Later, I worked on AI targeting using the utility and squad system. As of last, I helped a lot with solving bugs.</p>
+
+                <p>At the end of the block, we were still very behind schedule, and we had to work hard in the last block.</p>
+
+                <p>During the last block, I decided to distance myself mostly from QA management. I still kept track of the bug list and prioritized the bugs. I also made sure that the project builds kept working on Jenkins.
+                I mainly distanced myself from my supporting role because professionalism was hard to find in our team, and my motivation also started to decrease.</p>
+
+                <p>Beyond that, I've worked a lot on bug fixing, optimizing the AI ​​and navigation mesh, helping with lighting issues, and improving the AI ​​(crowd movement, better targeting and attacking, et cetera).</p>
+              </div>
+
+              <div class="featuresDiv">
+                <h2>Code</h2>
+
+                <p>I try to keep a consistent level of quality regarding my code. I make sure to follow the style guides, write comments to clarify specific parts, apply API-friendly comments, respond to unexpected behavior, keep functions as short as possible, think about maintainability, and more.</p>
+                <p>Here are a few images of my code: </p>
+
+                <img src="Images/LastResortDetails/CleanHeaderCode.png" class="readMoreImage" />
+                <img src="Images/LastResortDetails/CleanCPPCode.png" class="readMoreImage" />
+              </div>
             </div>
             <a href="#" class="close-popup"></a>
           </div>
@@ -761,7 +793,7 @@
             </images>
 
             <div class="projectInformation" style="width: 100%; padding-right: 50;">
-              <h1 class="titleProjectWhite">Bongo Beater - Demo</h1>
+              <h1 class="titleProjectWhite">Bongo Beater</h1>
 
               <div style="display: inline-block; width: 100%">
                 <i class="fa fa-tasks" aria-hidden="true" style="float: left;"></i>
