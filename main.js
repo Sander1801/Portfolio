@@ -143,8 +143,8 @@ $(document).ready(function()
 
   		// Get the name of the page we should display.
   		const newProjectID = $(this).attr("data-id");
-  		const differenceID = -newProjectID;
-  		const percentageToSlide = differenceID * 100;
+  		const negativeID = -newProjectID;
+  		const percentageToSlide = negativeID * 100;
   		const slideDuration = 600;
 
     		// Slide a div before the selected page will be displayed.
@@ -229,6 +229,36 @@ $(document).ready(function()
   		$('.skillsetOpenBar').animate({ right: (skillsetOpen) ? responsivePercentage : "0%" }, slideDuration, function() { });
   	});
 
+    document.onkeydown = function(e) 
+    {
+      if (currentPage == "projects")
+      {
+        switch(e.which) 
+        {
+            case 38: // Up
+              {
+                if (currentProjectID == 0) return;
+
+                SwitchProjectOnKey(currentProjectID, true);
+
+                currentProjectID--
+              }
+            break;
+
+            case 40: // Down
+              if (currentProjectID == 6) return;
+
+              SwitchProjectOnKey(currentProjectID);
+
+              currentProjectID++;
+            break;
+
+            default: return; // Exit this handler for other keys
+        }
+      }
+      e.preventDefault(); // Prevent the default action (scroll / move caret)
+    };
+
     var rayTracerJSON = {"WindowDimension":{"Width":800,"Height":750},"CameraPosition":{"X":0,"Y":-450,"Z":-1000},"Depth":3,"Multithreading":{"Threads":4,"TotalTasks":150},"Shapes":[{"Type":"Plane","Normal":{"X":0,"Y":1,"Z":0},"Position":{"X":0,"Y":0,"Z":0},"Material":{"Type":"Phong","Color":{"R":0.7,"G":0.7,"B":0.7},"Diffuse":0.8,"Specular":1,"Shininess":64}},{"Type":"Sphere","Radius":50,"Position":{"X":0,"Y":-50,"Z":0},"Material":{"Type":"Reflective","Color":{"R":0.7,"G":0.7,"B":0.7},"Diffuse":1,"Specular":0.6,"Shininess":128,"Reflective":0.2}}],"Lights":[{"Type":"Ambient","Color":{"R":1,"G":1,"B":1},"Intensity":0.2,"Sampler":{"Sets":30,"Samples":30}},{"Type":"Area","Color":{"R":1,"G":1,"B":1},"Position":{"X":200,"Y":-550,"Z":-55},"Scale":{"X":40,"Y":40,"Z":40},"Attenuation":{"Constant":1,"Linear":0.00014,"Quadratic":7e-7},"Intensity":1,"Sampler":{"Sets":30,"Samples":30}}],"GenerateSphereSurroundedScene":{"TotalCircles":13,"TotalShapesPerCircle":11,"OffsetFromSphere":180,"OffsetRadiusX":80,"OffsetRadiusZ":100,"StartPosition":{"X":0,"Y":-55,"Z":0},"Scale":{"MinX":60,"MaxX":80,"MinY":95,"MaxY":135,"MinZ":60,"MaxZ":80},"Rotation":{"MinX":-0.5,"MaxX":0.5,"MinY":-0.6,"MaxY":0.4,"MinZ":-0.3,"MaxZ":0.7},"Material":{"Type":"Matte","Color":{"MinR":0.1,"MaxR":0.6,"MinG":0.1,"MaxG":0.6,"MinB":0.01,"MaxB":0.8},"Diffuse":0.8}},"BackgroundColor":{"R":0.49,"G":0.49,"B":0.49}};
     document.getElementById('rayTracerJSON').innerHTML = prettyPrint(rayTracerJSON);
     document.getElementById('rayTracerJSONBig').innerHTML = prettyPrint(rayTracerJSON);
@@ -256,6 +286,25 @@ function SetProjectsLayout()
       $("verticallineRight").show();
     }
   }
+}
+
+function SwitchProjectOnKey(currentProjectID, bUp = false)
+{
+  // Get the name of the page we should display.
+  const newProjectID = (bUp) ? currentProjectID - 1 : currentProjectID + 1;
+  const negativeID = -newProjectID;
+  const percentageToSlide = negativeID * 100;
+  const slideDuration = 600;
+
+  // Stop the animation if one is currently playing.
+  $("projects").stop();
+
+  // Remove 'active' and add it to the selected project item.
+  $('#projectsList li').removeClass("active");
+  $("#projectsList").find("[data-id='" + newProjectID + "']").addClass("active");
+
+  // Slide a div before the selected page will be displayed.
+  $("projects").animate({ top: percentageToSlide + "%" }, slideDuration, function(){});
 }
 
 /**
